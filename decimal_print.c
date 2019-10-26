@@ -1,5 +1,10 @@
 #include "holberton.h"
 
+/**
+ * print_decimal - prints an int
+ * @ip: Pointer to an int
+ * Return: the number of chars printed.
+ */
 int print_decimal(void *ip)
 {
 	int i = *(int *)ip;
