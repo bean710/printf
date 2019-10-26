@@ -18,6 +18,7 @@ int _printf(char *string, ...)
 
 	spec specs[] = {
 		{"i", print_decimal, 'i'},
+		{"d", print_decimal, 'i'},
 		{"s", print_string, 's'}
 	};
 
@@ -26,7 +27,7 @@ int _printf(char *string, ...)
 		if (string[i] == '%')
 		{
 			j = i + 1;
-			for (k = 0; k < 2; k++)
+			for (k = 0; k < 3; k++)
 			{
 				if (*(specs[k].spec_string) == string[j])
 				{
