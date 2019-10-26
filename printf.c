@@ -5,7 +5,7 @@
 
 int _printf(const char *string, ...)
 {
-	int i, j, k;
+	int i, k;
 	void *vp;
 	va_list *valist;
 	int count = 0, flag = 0;
@@ -31,14 +31,14 @@ int _printf(const char *string, ...)
 			if (string[i + 1] == '%')
 			{
 				_putchar('%');
-				i += 2;
+				i++;
 				count++;
-				continue;
+				flag = 1;
 			}
-			j = i + 1;
-			for (k = 0; k < 4; k++)
+
+			for (k = 0; k < 4 && flag == 0; k++)
 			{
-				if (*(specs[k].spec_string) == string[j])
+				if (*(specs[k].spec_string) == string[i + 1])
 				{
 					vp = get_mem(specs[k], valist);
 					count += specs[k].func(vp);
@@ -50,7 +50,7 @@ int _printf(const char *string, ...)
 
 		if (flag == 0)
 		{
-			putchar(string[i]);
+			printf("\n");
 			count++;
 		}
 	}
