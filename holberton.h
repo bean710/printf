@@ -3,6 +3,16 @@
 
 #include <stdarg.h>
 
+/**
+ * struct specifier - for comparing printf specifiers.
+ * @spec_string: The printf specifier
+ * @func: The specifier's corresponding function pointer
+ * @type: The type of input the function takes, represented as a char.
+ *
+ * Description: This will be used as an array. It will hold all the printf
+ * specifiers in spec_string, it's corresponding function pointer in func, and
+ * the type of input the function takes in type.
+ */
 typedef struct specifier
 {
 	char *spec_string;
