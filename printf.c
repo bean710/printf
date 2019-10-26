@@ -50,7 +50,7 @@ int _printf(const char *string, ...)
 
 		if (flag == 0)
 		{
-			printf("\n");
+			_putchar(string[i]);
 			count++;
 		}
 	}
