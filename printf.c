@@ -19,9 +19,7 @@ int _printf(const char *string, ...)
 	specs = get_specs();
 	if (valist == NULL || specs == NULL)
 		return (-1);
-
 	va_start(*valist, string);
-
 	for (i = 0; string[i]; i++)
 	{
 		flag = 0;
@@ -45,11 +43,9 @@ int _printf(const char *string, ...)
 				}
 			}
 		}
-
 		if (flag == 0)
 			count += _putchar(string[i]);
 	}
-
 	return (count);
 }
 
@@ -58,6 +54,7 @@ spec *get_specs(void)
 	const int num = 4;
 	int i;
 	spec *ret_spec = malloc(sizeof(spec) * num);
+
 	if (ret_spec == NULL)
 		return (NULL);
 
