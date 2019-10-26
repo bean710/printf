@@ -2,6 +2,11 @@
 #include <stdarg.h>
 #include "holberton.h"
 
+/**
+ * _printf - prints data to standard out
+ * @string: Char string that will include specifiers
+ * Return: the number of characters printed.
+ */
 int _printf(const char *string, ...)
 {
 	int i, k;
@@ -57,6 +62,12 @@ int _printf(const char *string, ...)
 	return (count);
 }
 
+/**
+ * get_mem - returns a malloc'd void pointer
+ * @s: struct
+ * @valist: pointer of type va_list
+ * Return: void pointer
+ */
 void *get_mem(spec s, va_list *valist)
 {
 	void *vp;
