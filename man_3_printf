@@ -2,7 +2,7 @@
 .SH NAME
 _printf - format and print data to standard output.
 .SH SYNOPSIS
-#include "holberton.h"
+\fB#include "holberton.h"\fR
 .PP
 \fBint _printf(const char *\fR\fIformat\fR\fB, ...);\fR
 .SH DESCRIPTION
@@ -16,7 +16,21 @@ The format string is a character string, and must be the first argument
 passed to the \fB_printf\fR function.
 It will print ordinary characters (not %) without changing them to standard output.
 It will also print a variety of data, passed as additional arguments after the format string. 
-
+.SH \tConversion Specifiers
+These characters will tell \fB_printf()\fR what type of conversion is needed.
+Here are their meanings:
+.PP
+.B  "d, i"
+\tThese specifiers refer to an argument of type INT.
+.PP
+.B s
+\tThis specifier refers to an argument of type CHAR *.
+.PP
+.B c
+\tThis speciier refers to an argument of type CHAR.
+.PP
+.B %
+\t\t\tA '%' is written.
 .SH OPTIONS
 .B Specifiers
 Do not know if this is how I will format this section.
