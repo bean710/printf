@@ -8,7 +8,6 @@ _printf - format and print data to standard output.
 .SH DESCRIPTION
 The \fB_printf()\fR function prints to standard output according to a
 \fIformat\fR as described below.
-.PP
 .SS Return Value
 The \fB_printf()\fR function returns the number of characters it has printed.
 .SS Format of the format string
@@ -21,7 +20,9 @@ These characters will tell \fB_printf()\fR what type of conversion is needed.
 Here are their meanings:
 .PP
 .B  "d, i"
-\tThese specifiers refer to an argument of type INT.
+.in +7n
+These specifiers refer to an argument of type INT.
+.in
 .PP
 .B s
 \tThis specifier refers to an argument of type CHAR *.
