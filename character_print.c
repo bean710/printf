@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * print_char - Prints a character from a void pointer
+ * @cp: Void pointer which points to an address where a character is stored
+ *
+ * Return: Number of characters printed (Always 1)
+ */
 int print_char(void *cp)
 {
 	int c = *(int *)cp;
