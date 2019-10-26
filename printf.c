@@ -62,6 +62,12 @@ int _printf(const char *string, ...)
 	return (count);
 }
 
+/**
+ * get_mem - returns a malloc'd void pointer
+ * @s: struct
+ * @valist: pointer of type va_list
+ * Return: void pointer
+ */
 void *get_mem(spec s, va_list *valist)
 {
 	void *vp;
