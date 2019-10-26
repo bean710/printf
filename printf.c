@@ -17,6 +17,7 @@ int _printf(char *string, ...)
 	va_start(*valist, string);
 
 	spec specs[] = {
+		{"i", print_decimal, 'i'},
 		{"s", print_string, 's'}
 	};
 

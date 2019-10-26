@@ -14,6 +14,7 @@ void print_number(int n);
 int _pow(int a, int b);
 int getnum(int num, int index);
 int getlen(int num);
+int print_decimal(void *);
 int print_string(void *);
 void *get_mem(spec, va_list *);
 
