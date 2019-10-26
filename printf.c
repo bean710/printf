@@ -49,6 +49,12 @@ int _printf(const char *string, ...)
 	return (count);
 }
 
+/**
+ * get_specs - Gives a pointer to allocated space containing all predefined
+ * spec structs
+ * 
+ * Return: Pointer to the first element in an array of `spec`s
+ */
 spec *get_specs(void)
 {
 	const int num = 4;
