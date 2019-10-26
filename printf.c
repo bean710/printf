@@ -52,7 +52,6 @@ int _printf(const char *string, ...)
 /**
  * get_specs - Gives a pointer to allocated space containing all predefined
  * spec structs
- * 
  * Return: Pointer to the first element in an array of `spec`s
  */
 spec *get_specs(void)
