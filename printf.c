@@ -17,7 +17,10 @@ int _printf(char *string, ...)
 	va_start(*valist, string);
 
 	spec specs[] = {
-		{"s", print_string, 's'}
+		{"i", print_decimal, 'i'},
+		{"d", print_decimal, 'i'},
+		{"s", print_string, 's'},
+		{"c", print_char, 'i'}
 	};
 
 	for (i = 0; string[i]; i++)
@@ -25,7 +28,7 @@ int _printf(char *string, ...)
 		if (string[i] == '%')
 		{
 			j = i + 1;
-			for (k = 0; k < 2; k++)
+			for (k = 0; k < 4; k++)
 			{
 				if (*(specs[k].spec_string) == string[j])
 				{
