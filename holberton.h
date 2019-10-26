@@ -28,5 +28,7 @@ int print_decimal(void *);
 int print_string(void *);
 int print_char(void *);
 void *get_mem(spec, va_list *);
+int _putchar(char);
+int _printf(const char *, ...);
 
 #endif
