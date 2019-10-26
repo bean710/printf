@@ -1,8 +1,12 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 
+/**
+ * _printf - prints data to standard out
+ * @string: Char string that will include specifiers
+ * Return: the number of characters printed.
+ */
 int _printf(const char *string, ...)
 {
 	int i, k;
