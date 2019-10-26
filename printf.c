@@ -12,20 +12,15 @@ int _printf(const char *string, ...)
 	int i, k;
 	void *vp;
 	va_list *valist;
+	spec *specs;
 	int count = 0, flag = 0;
 
 	valist = malloc(sizeof(va_list));
-	if (valist == NULL)
+	specs = get_specs();
+	if (valist == NULL || specs == NULL)
 		return (-1);
 
 	va_start(*valist, string);
-
-	spec specs[] = {
-		{"i", print_decimal, 'i'},
-		{"d", print_decimal, 'i'},
-		{"s", print_string, 's'},
-		{"c", print_char, 'i'}
-	};
 
 	for (i = 0; string[i]; i++)
 	{
@@ -56,6 +51,27 @@ int _printf(const char *string, ...)
 	}
 
 	return (count);
+}
+
+spec *get_specs(void)
+{
+	const int num = 4;
+	int i;
+	spec *ret_spec = malloc(sizeof(spec) * num);
+	if (ret_spec == NULL)
+		return (NULL);
+
+	spec specs[] = {
+		{"i", print_decimal, 'i'},
+		{"d", print_decimal, 'i'},
+		{"s", print_string, 's'},
+		{"c", print_char, 'i'}
+	};
+
+	for (i = 0; i < num; i++)
+		ret_spec[i] = specs[i];
+
+	return (ret_spec);
 }
 
 /**
