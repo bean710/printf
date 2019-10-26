@@ -34,9 +34,8 @@ int _printf(const char *string, ...)
 		{
 			if (string[i + 1] == '%')
 			{
-				_putchar('%');
+				count += _putchar('%');
 				i++;
-				count++;
 				flag = 1;
 			}
 
@@ -53,10 +52,7 @@ int _printf(const char *string, ...)
 		}
 
 		if (flag == 0)
-		{
-			_putchar(string[i]);
-			count++;
-		}
+			count += _putchar(string[i]);
 	}
 
 	return (count);
