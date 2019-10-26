@@ -4,5 +4,6 @@ int print_char(void *cp)
 {
 	int c = *(int *)cp;
 
-	putchar(c);
+	_putchar(c);
+	return (1);
 }
