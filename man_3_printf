@@ -1,0 +1,28 @@
+.TH _PRINTF "1" "COHORT 10" "HOLBERTON" "User Commands"
+.SH NAME
+_printf - format and print data to standard output.
+.SH SYNOPSIS
+#include "holberton.h"
+.PP
+\fBint _printf(const char *\fR\fIformat\fR\fB,...);\fR
+.SH DESCRIPTION
+The \fB_printf()\fR function prints to standard output according to a
+\fIformat\fR as described below.
+.PP
+.B Return Value
+The \fB_printf()\fR function returns the number of characters it has printed.
+.PP
+.B Format of the format string
+The format string is a character string, and must be the first argument
+passed to the \fB_printf\fR function. It will print ordinary characters (not %) without changing them to standard output. It will also print a variety of data, passed as additional arguments after the format string. 
+
+.SH OPTIONS
+.B Specifiers
+Do not know if this is how I will format this section.
+.SH SEE ALSO
+.I Need to add something here.
+.SH BUGS
+No known bugs. HAHA
+.SH AUTHOR
+Ben Keener and Travis Bearden
+
