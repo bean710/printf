@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include "holberton.h"
 
-int _printf(char *string, ...)
+int _printf(const char *string, ...)
 {
 	int i, j, k;
 	void *vp;
@@ -27,6 +27,13 @@ int _printf(char *string, ...)
 	{
 		if (string[i] == '%')
 		{
+			if (string[i + 1] == '%')
+			{
+				_putchar('%');
+				i += 2;
+				count++;
+				continue;
+			}
 			j = i + 1;
 			for (k = 0; k < 4; k++)
 			{
