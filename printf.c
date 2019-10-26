@@ -58,7 +58,7 @@ void *get_mem(spec s, va_list *valist)
 				return (NULL);
 			*(int *)vp = va_arg(*valist, int);
 			return (vp);
-		
+
 		case 's':
 			vp = malloc(sizeof(char *));
 			if (vp == NULL)
