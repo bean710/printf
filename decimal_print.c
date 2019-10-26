@@ -19,14 +19,14 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		for (i = 0; i < getlen(n); i++)
-			putchar('0' + -getnum(n, i));
+			_putchar('0' + -getnum(n, i));
 	}
 	else
 	{
 		for (i = 0; i < getlen(n); i++)
-			putchar('0' + getnum(n, i));
+			_putchar('0' + getnum(n, i));
 	}
 }
 
