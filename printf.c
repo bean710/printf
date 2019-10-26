@@ -8,7 +8,7 @@ int _printf(char *string, ...)
 	int i, j, k;
 	void *vp;
 	va_list *valist;
-	int count = 0;
+	int count = 0, flag = 0;
 
 	valist = malloc(sizeof(va_list));
 	if (valist == NULL)
@@ -25,6 +25,7 @@ int _printf(char *string, ...)
 
 	for (i = 0; string[i]; i++)
 	{
+		flag = 0;
 		if (string[i] == '%')
 		{
 			j = i + 1;
@@ -34,12 +35,13 @@ int _printf(char *string, ...)
 				{
 					vp = get_mem(specs[k], valist);
 					count += specs[k].func(vp);
-					i += 2;
+					i++;
+					flag = 1;
 				}
 			}
 		}
 
-		if (string[i])
+		if (flag == 0)
 		{
 			putchar(string[i]);
 			count++;
