@@ -1,14 +1,14 @@
 #include "holberton.h"
 #include <stdio.h>
 
-int dec_to_hex(unsigned int i, char *set)
+int base_converter(unsigned int i, unsigned int base, char *set)
 {
 	int count = 1;
 
-	if (i > 15)
-		count += dec_to_hex(i / 16, set);
+	if (i > base - 1)
+		count += base_converter(i / base, base, set);
 
-	_putchar(set[i % 16]);
+	_putchar(set[i % base]);
 
 	return (count);
 }
@@ -19,7 +19,7 @@ int print_hex(void *uhp)
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789abcdef";
 
-	return (dec_to_hex(hex, set));
+	return (base_converter(hex, 16, set));
 }
 
 int print_hex_u(void *uhp)
@@ -28,5 +28,5 @@ int print_hex_u(void *uhp)
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789ABCDEF";
 
-	return (dec_to_hex(hex, set));
+	return (base_converter(hex, 16, set));
 }

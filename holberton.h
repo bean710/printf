@@ -25,6 +25,7 @@ void print_number(int n);
 int _pow(int a, int b);
 int getnum(int num, int index);
 int getlen(int num);
+int base_converter(unsigned int, unsigned int, char *);
 
 int print_decimal(void *);
 int print_string(void *);
