@@ -10,7 +10,7 @@
  */
 int _printf(const char *string, ...)
 {
-	int i, k;
+	unsigned int i, k;
 	void *vp;
 	va_list *valist;
 	spec *specs;
