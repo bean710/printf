@@ -22,9 +22,8 @@ int _printf(const char *string, ...)
 	if (string == NULL || valist == NULL || specs == NULL)
 		return (-1);
 	va_start(*valist, string);
-	for (i = 0; string[i]; i++)
+	for (i = 0; string[i]; i++, flag = 0)
 	{
-		flag = 0;
 		if (string[i] == '%')
 		{
 			if (string[i + 1] == '%')
@@ -33,7 +32,6 @@ int _printf(const char *string, ...)
 				i++;
 				flag = 1;
 			}
-
 			for (k = 0; k < specnum && flag == 0; k++)
 			{
 				if (*(specs[k].spec_string) == string[i + 1])
@@ -49,7 +47,6 @@ int _printf(const char *string, ...)
 		if (flag == 0)
 			count += _putchar(string[i]);
 	}
-
 	free(specs);
 	free(valist);
 	return (count);
