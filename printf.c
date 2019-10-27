@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
@@ -6,6 +5,7 @@
 /**
  * _printf - prints data to standard out
  * @string: Char string that will include specifiers
+ *
  * Return: the number of characters printed.
  */
 int _printf(const char *string, ...)
@@ -54,12 +54,15 @@ int _printf(const char *string, ...)
 /**
  * get_specs - Gives a pointer to allocated space containing all predefined
  * spec structs
+ * @i: Pointer to an unsigned int which will be iterated based on how many
+ * spec strucs will be returnes
+ *
  * Return: Pointer to the first element in an array of `spec`s
  */
 spec *get_specs(unsigned int *i)
 {
 	spec *ret_spec;
-	unsigned int j;	
+	unsigned int j;
 	spec specs[] = {
 		{"i", print_decimal, 'i'},
 		{"d", print_decimal, 'i'},
