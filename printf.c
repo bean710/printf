@@ -9,7 +9,7 @@
  */
 int _printf(const char *string, ...)
 {
-	const unsigned int specnum = 5;
+	const unsigned int specnum = 6;
 	int i, k;
 	void *vp;
 	va_list *valist;
@@ -17,7 +17,7 @@ int _printf(const char *string, ...)
 	int count = 0, flag = 0;
 
 	valist = malloc(sizeof(va_list));
-	specs = get_specs(5);
+	specs = get_specs(specnum);
 	if (valist == NULL || specs == NULL)
 		return (-1);
 	va_start(*valist, string);
@@ -57,9 +57,8 @@ int _printf(const char *string, ...)
  */
 spec *get_specs(unsigned int specnum)
 {
-	const int num = 5;
 	int i;
-	spec *ret_spec = malloc(sizeof(spec) * num);
+	spec *ret_spec = malloc(sizeof(spec) * specnum);
 
 	if (ret_spec == NULL)
 		return (NULL);
@@ -69,10 +68,11 @@ spec *get_specs(unsigned int specnum)
 		{"d", print_decimal, 'i'},
 		{"s", print_string, 's'},
 		{"c", print_char, 'i'},
-		{"x", print_hex, 'u'}
+		{"x", print_hex, 'u'},
+		{"X", print_hex_u, 'u'}
 	};
 
-	for (i = 0; i < num; i++)
+	for (i = 0; i < specnum; i++)
 		ret_spec[i] = specs[i];
 
 	return (ret_spec);
