@@ -32,5 +32,6 @@ void *get_mem(spec, va_list *);
 int _putchar(char);
 int _printf(const char *, ...);
 int print_binary(void *);
+unsigned int u_pow(unsigned int, unsigned int);
 
 #endif
