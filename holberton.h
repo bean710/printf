@@ -31,5 +31,6 @@ int print_char(void *);
 void *get_mem(spec, va_list *);
 int _putchar(char);
 int _printf(const char *, ...);
+int print_binary(void *);
 
 #endif

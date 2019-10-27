@@ -67,7 +67,8 @@ spec *get_specs(void)
 		{"i", print_decimal, 'i'},
 		{"d", print_decimal, 'i'},
 		{"s", print_string, 's'},
-		{"c", print_char, 'i'}
+		{"c", print_char, 'i'},
+		{"b", print_binary, 'u'}
 	};
 
 	for (i = 0; i < num; i++)
@@ -100,6 +101,12 @@ void *get_mem(spec s, va_list *valist)
 			if (vp == NULL)
 				return (NULL);
 			*(char **)vp = va_arg(*valist, char *);
+			return (vp);
+		case 'u':
+			vp = malloc(sizeof(unsigned int));
+			if (vp == NULL)
+				return (NULL);
+			*(unsigned int *)vp = va_arg(*valist, unsigned int);
 			return (vp);
 	}
 
