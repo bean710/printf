@@ -67,7 +67,8 @@ spec *get_specs(void)
 		{"i", print_decimal, 'i'},
 		{"d", print_decimal, 'i'},
 		{"s", print_string, 's'},
-		{"c", print_char, 'i'}
+		{"c", print_char, 'i'},
+		{"x", print_hex, 'u'}
 	};
 
 	for (i = 0; i < num; i++)
