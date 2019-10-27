@@ -40,6 +40,7 @@ int _printf(const char *string, ...)
 				{
 					vp = get_mem(specs[k], valist);
 					count += specs[k].func(vp);
+					free(vp);
 					i++;
 					flag = 1;
 				}
@@ -48,6 +49,9 @@ int _printf(const char *string, ...)
 		if (flag == 0)
 			count += _putchar(string[i]);
 	}
+
+	free(specs);
+	free(valist);
 	return (count);
 }
 
