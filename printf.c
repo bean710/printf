@@ -32,7 +32,7 @@ int _printf(const char *string, ...)
 				flag = 1;
 			}
 
-			for (k = 0; k < 4 && flag == 0; k++)
+			for (k = 0; k < 5 && flag == 0; k++)
 			{
 				if (*(specs[k].spec_string) == string[i + 1])
 				{
@@ -56,7 +56,7 @@ int _printf(const char *string, ...)
  */
 spec *get_specs(void)
 {
-	const int num = 4;
+	const int num = 5;
 	int i;
 	spec *ret_spec = malloc(sizeof(spec) * num);
 
@@ -107,7 +107,7 @@ void *get_mem(spec s, va_list *valist)
 			vp = malloc(sizeof(unsigned int));
 			if (vp == NULL)
 				return (NULL);
-			*(unsigned int *)vp = va_arg(*valist, unsigned int *);
+			*(unsigned int *)vp = va_arg(*valist, unsigned int);
 			return (vp);
 	}
 

@@ -25,9 +25,12 @@ void print_number(int n);
 int _pow(int a, int b);
 int getnum(int num, int index);
 int getlen(int num);
+
 int print_decimal(void *);
 int print_string(void *);
 int print_char(void *);
+int print_hex(void *);
+
 void *get_mem(spec, va_list *);
 int _putchar(char);
 int _printf(const char *, ...);
