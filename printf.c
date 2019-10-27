@@ -9,6 +9,7 @@
  */
 int _printf(const char *string, ...)
 {
+	const unsigned int specnum = 5;
 	int i, k;
 	void *vp;
 	va_list *valist;
@@ -16,7 +17,7 @@ int _printf(const char *string, ...)
 	int count = 0, flag = 0;
 
 	valist = malloc(sizeof(va_list));
-	specs = get_specs();
+	specs = get_specs(5);
 	if (valist == NULL || specs == NULL)
 		return (-1);
 	va_start(*valist, string);
@@ -32,7 +33,7 @@ int _printf(const char *string, ...)
 				flag = 1;
 			}
 
-			for (k = 0; k < 5 && flag == 0; k++)
+			for (k = 0; k < specnum && flag == 0; k++)
 			{
 				if (*(specs[k].spec_string) == string[i + 1])
 				{
@@ -54,7 +55,7 @@ int _printf(const char *string, ...)
  * spec structs
  * Return: Pointer to the first element in an array of `spec`s
  */
-spec *get_specs(void)
+spec *get_specs(unsigned int specnum)
 {
 	const int num = 5;
 	int i;
