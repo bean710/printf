@@ -10,7 +10,6 @@
  */
 int _printf(const char *string, ...)
 {
-	const unsigned int specnum = 6;
 	int i, k;
 	void *vp;
 	va_list *valist;
@@ -67,7 +66,8 @@ spec *get_specs(unsigned int *i)
 		{"s", print_string, 's'},
 		{"c", print_char, 'i'},
 		{"x", print_hex, 'u'},
-		{"X", print_hex_u, 'u'}
+		{"X", print_hex_u, 'u'},
+		{"o", print_oct, 'u'},
 		{NULL, NULL, '\0'}
 	};
 
