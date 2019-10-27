@@ -20,7 +20,7 @@ typedef struct specifier
 	char type;
 } spec;
 
-spec *get_specs(unsigned int);
+spec *get_specs(unsigned int *);
 void print_number(int n);
 int _pow(int a, int b);
 int getnum(int num, int index);

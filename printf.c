@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
@@ -15,10 +16,11 @@ int _printf(const char *string, ...)
 	va_list *valist;
 	spec *specs;
 	int count = 0, flag = 0;
+	unsigned int specnum = 0;
 
 	valist = malloc(sizeof(va_list));
-	specs = get_specs(specnum);
-	if (valist == NULL || specs == NULL)
+	specs = get_specs(&specnum);
+	if (string == NULL || valist == NULL || specs == NULL)
 		return (-1);
 	va_start(*valist, string);
 	for (i = 0; string[i]; i++)
@@ -55,14 +57,10 @@ int _printf(const char *string, ...)
  * spec structs
  * Return: Pointer to the first element in an array of `spec`s
  */
-spec *get_specs(unsigned int specnum)
+spec *get_specs(unsigned int *i)
 {
-	int i;
-	spec *ret_spec = malloc(sizeof(spec) * specnum);
-
-	if (ret_spec == NULL)
-		return (NULL);
-
+	spec *ret_spec;
+	unsigned int j;	
 	spec specs[] = {
 		{"i", print_decimal, 'i'},
 		{"d", print_decimal, 'i'},
@@ -70,10 +68,18 @@ spec *get_specs(unsigned int specnum)
 		{"c", print_char, 'i'},
 		{"x", print_hex, 'u'},
 		{"X", print_hex_u, 'u'}
+		{NULL, NULL, '\0'}
 	};
 
-	for (i = 0; i < specnum; i++)
-		ret_spec[i] = specs[i];
+	for (; specs[*i].spec_string != NULL; (*i)++)
+		;
+
+	ret_spec = malloc(sizeof(spec) * (*i));
+	if (ret_spec == NULL)
+		return (NULL);
+
+	for (j = 0; j < *i; j++)
+		ret_spec[j] = specs[j];
 
 	return (ret_spec);
 }
