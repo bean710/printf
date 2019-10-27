@@ -4,6 +4,7 @@
 int dec_to_hex(unsigned int i, char *set)
 {
 	int count = 1;
+
 	if (i > 15)
 		count += dec_to_hex(i / 16, set);
 
@@ -18,5 +19,14 @@ int print_hex(void *uhp)
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789abcdef";
 
-	return(dec_to_hex(hex, set));
+	return (dec_to_hex(hex, set));
+}
+
+int print_hex_u(void *uhp)
+{
+	unsigned int i = 1, count = 0;
+	unsigned int hex = *(unsigned int *)uhp;
+	char *set = "0123456789ABCDEF";
+
+	return (dec_to_hex(hex, set));
 }
