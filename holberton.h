@@ -34,5 +34,6 @@ int _printf(const char *, ...);
 int print_binary(void *);
 unsigned int u_pow(unsigned int, unsigned int);
 int print_reverse(void *);
+int print_rot(void *);
 
 #endif
