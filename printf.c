@@ -5,25 +5,26 @@
 /**
  * _printf - prints data to standard out
  * @string: Char string that will include specifiers
+ *
  * Return: the number of characters printed.
  */
 int _printf(const char *string, ...)
 {
-	const unsigned int specnum = 6;
-	int i, k;
+	unsigned int i, k;
 	void *vp;
 	va_list *valist;
 	spec *specs;
 	int count = 0, flag = 0;
+	unsigned int specnum = 0;
 
 	valist = malloc(sizeof(va_list));
-	specs = get_specs(specnum);
-	if (valist == NULL || specs == NULL)
+	specs = get_specs(&specnum);
+	if (string == NULL || valist == NULL || specs == NULL || (*string == '%'
+				&& string[1] == '\0'))
 		return (-1);
 	va_start(*valist, string);
-	for (i = 0; string[i]; i++)
+	for (i = 0; string[i]; i++, flag = 0)
 	{
-		flag = 0;
 		if (string[i] == '%')
 		{
 			if (string[i + 1] == '%')
@@ -32,13 +33,13 @@ int _printf(const char *string, ...)
 				i++;
 				flag = 1;
 			}
-
 			for (k = 0; k < specnum && flag == 0; k++)
 			{
 				if (*(specs[k].spec_string) == string[i + 1])
 				{
 					vp = get_mem(specs[k], valist);
 					count += specs[k].func(vp);
+					free(vp);
 					i++;
 					flag = 1;
 				}
@@ -47,33 +48,41 @@ int _printf(const char *string, ...)
 		if (flag == 0)
 			count += _putchar(string[i]);
 	}
+	free(specs), free(valist);
 	return (count);
 }
 
 /**
  * get_specs - Gives a pointer to allocated space containing all predefined
  * spec structs
+ * @i: Pointer to an unsigned int which will be iterated based on how many
+ * spec strucs will be returnes
+ *
  * Return: Pointer to the first element in an array of `spec`s
  */
-spec *get_specs(unsigned int specnum)
+spec *get_specs(unsigned int *i)
 {
-	int i;
-	spec *ret_spec = malloc(sizeof(spec) * specnum);
-
-	if (ret_spec == NULL)
-		return (NULL);
-
+	spec *ret_spec;
+	unsigned int j;
 	spec specs[] = {
 		{"i", print_decimal, 'i'},
 		{"d", print_decimal, 'i'},
 		{"s", print_string, 's'},
 		{"c", print_char, 'i'},
 		{"x", print_hex, 'u'},
-		{"X", print_hex_u, 'u'}
+		{"X", print_hex_u, 'u'},
+		{NULL, NULL, '\0'}
 	};
 
-	for (i = 0; i < specnum; i++)
-		ret_spec[i] = specs[i];
+	for (; specs[*i].spec_string != NULL; (*i)++)
+		;
+
+	ret_spec = malloc(sizeof(spec) * (*i));
+	if (ret_spec == NULL)
+		return (NULL);
+
+	for (j = 0; j < *i; j++)
+		ret_spec[j] = specs[j];
 
 	return (ret_spec);
 }
