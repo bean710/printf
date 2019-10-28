@@ -20,6 +20,13 @@ typedef struct specifier
 	char type;
 } spec;
 
+typedef struct parameters
+{
+	int flag[4];
+	int width;
+	int precision;
+} param;
+
 spec *get_specs(unsigned int *);
 void print_number(int n);
 int _pow(int a, int b);

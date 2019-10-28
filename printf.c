@@ -42,6 +42,64 @@ int _printf(const char *string, ...)
 	return (count);
 }
 
+char getflag(const char *string)
+{
+	int i, j;
+	char flags[4] = "-+ #0";
+
+	for (i = 0; flags[i]; i++)
+	{
+		if (*string == flags[i])
+			return (flags[i]);
+	}
+
+	return ('\0');
+}
+
+int getwidth(const char *string)
+{
+	int width = 0;
+	int i;
+
+	if (string[0] == '*')
+		return (-1);
+
+	for (i = 0; isdig(string[i]; i++))
+	{
+		width *= 10;
+		width += (string[i] - '0');
+	}
+
+	return (width);
+}
+
+int getprecision(const char *string)
+{
+	int precision = 0;
+	int i;
+}
+
+int isdig(char c)
+{
+	int i;
+	char digs[11] = "0123456789";
+
+	for (i = 0; digs[i]; i++)
+	{
+		if (c == digs[i])
+			return (1);
+	}
+
+	return (0);
+}
+
+param get_full(const char *string, unsigned int specnum)
+{
+	spec match_specs[specnum];
+	int i;
+
+
+
 /**
  * loop_specifiers - Loops through the specifiers and runs a function if it
  * exists
