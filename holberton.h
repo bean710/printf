@@ -37,6 +37,7 @@ int print_unsig(void *);
 int print_special(void *);
 
 void *get_mem(spec, va_list *);
+int loop_specifiers(va_list *, unsigned int, char, spec *, int *, int *);
 int _putchar(char);
 int _printf(const char *, ...);
 int print_binary(void *);
