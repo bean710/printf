@@ -22,7 +22,12 @@ typedef struct specifier
 
 typedef struct parameters
 {
-	int flag[4];
+	/* Flags */
+	char plus;
+	char minus;
+	char zero;
+	char space;
+
 	int width;
 	int precision;
 } param;
