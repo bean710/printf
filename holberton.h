@@ -25,9 +25,14 @@ void print_number(int n);
 int _pow(int a, int b);
 int getnum(int num, int index);
 int getlen(int num);
+int base_converter(unsigned int, unsigned int, char *);
+
 int print_decimal(void *);
 int print_string(void *);
 int print_char(void *);
+int print_hex(void *);
+int print_hex_u(void *);
+
 void *get_mem(spec, va_list *);
 int _putchar(char);
 int _printf(const char *, ...);
