@@ -11,6 +11,11 @@ int print_binary(void *ip)
 	unsigned int i;
 	int count = 0;
 
+	if (n == 0)
+	{
+		_putchar('1');
+		return (1);
+	}
 	for (i = 31; i <= 31; i--)
 	{
 		if (n / u_pow(2, i) > 0 && count == 0)
