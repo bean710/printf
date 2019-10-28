@@ -75,6 +75,7 @@ spec *get_specs(unsigned int *i)
 		{"u", print_unsig, 'u'},
 		{"b", print_binary, 'u'},
 		{"r", print_reverse, 's'},
+		{"S", print_special, 's'},
 		{"R", print_rot, 's'},
 		{NULL, NULL, '\0'}
 	};
