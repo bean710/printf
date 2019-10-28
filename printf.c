@@ -113,10 +113,7 @@ void *get_mem(spec s, va_list *valist)
 				return (NULL);
 			*(char **)vp = va_arg(*valist, char *);
 			return (vp);
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 		case 'u':
 			vp = malloc(sizeof(unsigned int));
 			if (vp == NULL)

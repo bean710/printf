@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * base_converter - Converts an unsigned integer to a different base and
