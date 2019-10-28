@@ -71,6 +71,7 @@ spec *get_specs(unsigned int *i)
 		{"c", print_char, 'i'},
 		{"x", print_hex, 'u'},
 		{"X", print_hex_u, 'u'},
+		{"o", print_oct, 'u'},
 		{"b", print_binary, 'u'},
 		{NULL, NULL, '\0'}
 	};
@@ -92,6 +93,7 @@ spec *get_specs(unsigned int *i)
  * get_mem - returns a malloc'd void pointer
  * @s: struct
  * @valist: pointer of type va_list
+ *
  * Return: void pointer
  */
 void *get_mem(spec s, va_list *valist)
