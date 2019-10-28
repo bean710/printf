@@ -34,12 +34,15 @@ int print_hex(void *);
 int print_hex_u(void *);
 int print_oct(void *);
 int print_unsig(void *);
+int print_special(void *);
 
 void *get_mem(spec, va_list *);
+int loop_specifiers(va_list *, unsigned int, char, spec *, int *, int *);
 int _putchar(char);
 int _printf(const char *, ...);
 int print_binary(void *);
 unsigned int u_pow(unsigned int, unsigned int);
 int print_reverse(void *);
+int print_rot(void *);
 
 #endif
