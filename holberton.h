@@ -48,6 +48,7 @@ int print_long_hex(void *luhp);
 int print_long_hex_u(void *luhp);
 int print_unsig_long(void *luip);
 int print_ptr(void *p);
+int print_oct_long(void *luop);
 
 
 #endif
