@@ -14,7 +14,7 @@ int print_reverse(void *s)
 	for (i = 0; arr[i] != '\0'; i++)
 		;
 	i--;
-	for ( ; i > - 1; i--)
+	for (; i > -1; i--)
 	{
 		_putchar(arr[i]);
 		count++;
