@@ -71,6 +71,7 @@ spec *get_specs(unsigned int *i)
 		{"c", print_char, 'i'},
 		{"x", print_hex, 'u'},
 		{"X", print_hex_u, 'u'},
+		{"b", print_binary, 'u'},
 		{NULL, NULL, '\0'}
 	};
 
@@ -112,7 +113,10 @@ void *get_mem(spec s, va_list *valist)
 				return (NULL);
 			*(char **)vp = va_arg(*valist, char *);
 			return (vp);
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 		case 'u':
 			vp = malloc(sizeof(unsigned int));
 			if (vp == NULL)
