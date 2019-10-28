@@ -13,7 +13,7 @@ int print_binary(void *ip)
 
 	if (n == 0)
 	{
-		_putchar('1');
+		_putchar('0');
 		return (1);
 	}
 	for (i = 31; i <= 31; i--)
