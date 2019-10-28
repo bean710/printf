@@ -30,7 +30,6 @@ int base_converter(unsigned int i, unsigned int base, char *set)
  */
 int print_hex(void *uhp)
 {
-	unsigned int i = 1, count = 0;
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789abcdef";
 
@@ -46,7 +45,6 @@ int print_hex(void *uhp)
  */
 int print_hex_u(void *uhp)
 {
-	unsigned int i = 1, count = 0;
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789ABCDEF";
 
