@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_unint - Prints an unsigned integer
+ * print_unsig - Prints an unsigned integer
  * @uip: Void pointer to an adress in memory which holds an unsigned integer
  *
  * Return: The number of characters printed
