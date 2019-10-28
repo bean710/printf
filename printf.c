@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
@@ -6,11 +5,12 @@
 /**
  * _printf - prints data to standard out
  * @string: Char string that will include specifiers
+ *
  * Return: the number of characters printed.
  */
 int _printf(const char *string, ...)
 {
-	int i, k;
+	unsigned int i, k;
 	void *vp;
 	va_list *valist;
 	spec *specs;
@@ -19,12 +19,12 @@ int _printf(const char *string, ...)
 
 	valist = malloc(sizeof(va_list));
 	specs = get_specs(&specnum);
-	if (string == NULL || valist == NULL || specs == NULL)
+	if (string == NULL || valist == NULL || specs == NULL || (*string == '%'
+				&& string[1] == '\0'))
 		return (-1);
 	va_start(*valist, string);
-	for (i = 0; string[i]; i++)
+	for (i = 0; string[i]; i++, flag = 0)
 	{
-		flag = 0;
 		if (string[i] == '%')
 		{
 			if (string[i + 1] == '%')
@@ -33,13 +33,13 @@ int _printf(const char *string, ...)
 				i++;
 				flag = 1;
 			}
-
 			for (k = 0; k < specnum && flag == 0; k++)
 			{
 				if (*(specs[k].spec_string) == string[i + 1])
 				{
 					vp = get_mem(specs[k], valist);
 					count += specs[k].func(vp);
+					free(vp);
 					i++;
 					flag = 1;
 				}
@@ -48,18 +48,22 @@ int _printf(const char *string, ...)
 		if (flag == 0)
 			count += _putchar(string[i]);
 	}
+	free(specs), free(valist);
 	return (count);
 }
 
 /**
  * get_specs - Gives a pointer to allocated space containing all predefined
  * spec structs
+ * @i: Pointer to an unsigned int which will be iterated based on how many
+ * spec strucs will be returnes
+ *
  * Return: Pointer to the first element in an array of `spec`s
  */
 spec *get_specs(unsigned int *i)
 {
 	spec *ret_spec;
-	unsigned int j;	
+	unsigned int j;
 	spec specs[] = {
 		{"i", print_decimal, 'i'},
 		{"d", print_decimal, 'i'},
@@ -68,6 +72,7 @@ spec *get_specs(unsigned int *i)
 		{"x", print_hex, 'u'},
 		{"X", print_hex_u, 'u'},
 		{"o", print_oct, 'u'},
+		{"b", print_binary, 'u'},
 		{NULL, NULL, '\0'}
 	};
 

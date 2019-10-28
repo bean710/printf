@@ -11,7 +11,7 @@ int print_decimal(void *ip)
 
 	print_number(i);
 
-	return (getlen(i));
+	return (getlen(i) + (i < 0 ? 1 : 0));
 }
 
 /**
