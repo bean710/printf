@@ -19,7 +19,8 @@ int _printf(const char *string, ...)
 
 	valist = malloc(sizeof(va_list));
 	specs = get_specs(&specnum);
-	if (string == NULL || valist == NULL || specs == NULL)
+	if (string == NULL || valist == NULL || specs == NULL || (*string == '%'
+				&& string[1] == '\0'))
 		return (-1);
 	va_start(*valist, string);
 	for (i = 0; string[i]; i++, flag = 0)
@@ -47,8 +48,7 @@ int _printf(const char *string, ...)
 		if (flag == 0)
 			count += _putchar(string[i]);
 	}
-	free(specs);
-	free(valist);
+	free(specs), free(valist);
 	return (count);
 }
 
