@@ -33,6 +33,7 @@ int print_char(void *);
 int print_hex(void *);
 int print_hex_u(void *);
 int print_oct(void *);
+int print_unsig(void *);
 
 void *get_mem(spec, va_list *);
 int _putchar(char);
