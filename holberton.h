@@ -42,4 +42,12 @@ int print_binary(void *);
 unsigned int u_pow(unsigned int, unsigned int);
 int print_reverse(void *);
 
+/* long number functions */
+int long_base_converter(unsigned long int i, unsigned long int base, char *set);
+int print_long_hex(void *luhp);
+int print_long_hex_u(void *luhp);
+int print_unsig_long(void *luip);
+int print_ptr(void *p);
+
+
 #endif
