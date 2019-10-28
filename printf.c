@@ -72,6 +72,7 @@ spec *get_specs(unsigned int *i)
 		{"x", print_hex, 'u'},
 		{"X", print_hex_u, 'u'},
 		{"o", print_oct, 'u'},
+		{"u", print_unsig, 'u'},
 		{"b", print_binary, 'u'},
 		{NULL, NULL, '\0'}
 	};
