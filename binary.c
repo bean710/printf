@@ -3,6 +3,7 @@
 /**
  * print_binary - Prints an unsigned number in binary.
  * @ip: A pointer to an unsigned int
+ * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
 int print_binary(void *ip, param params)
