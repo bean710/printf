@@ -67,4 +67,19 @@ unsigned int u_pow(unsigned int, unsigned int);
 int print_reverse(void *);
 int print_rot(void *);
 
+/* long number functions */
+int long_base_converter(unsigned long int i, unsigned long int base, char *set);
+int print_long_hex(void *luhp);
+int print_long_hex_u(void *luhp);
+int print_unsig_long(void *luip);
+int print_ptr(void *p);
+int print_oct_long(void *luop);
+
+/* short number functions */
+int short_base_conv(unsigned short int i, unsigned short int base, char *set);
+int print_short_hex(void *suhp);
+int print_short_hex_u(void *suhp);
+int print_oct_short(void *suop);
+int print_unsig_short(void *suip);
+
 #endif
