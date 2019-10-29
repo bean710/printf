@@ -1,4 +1,5 @@
-#include "holberton.h";
+#include "holberton.h"
+#include <stddef.h>
 
 int setflags(const char *string, param *p)
 {
@@ -30,7 +31,7 @@ int setflags(const char *string, param *p)
 				i++;
 				break;
 		}
-	} while (i && string[++ofset])
+	} while (i && string[++offset]);
 
 	return (offset);
 }
@@ -42,7 +43,7 @@ int setwidth(const char *string, param *p)
 	if (string[0] == '*')
 		return (-1);
 
-	for (i = 0; isdig(string[i]; i++))
+	for (i = 0; string[i] && isdig(string[i]); i++)
 	{
 		p->width *= 10;
 		p->width += (string[i] - '0');
@@ -51,12 +52,41 @@ int setwidth(const char *string, param *p)
 	return (i);
 }
 
-int setprecision(const char *string)
+int setprecision(const char *string, param* p)
 {
-	int precision = 0;
+	int offset = 0;
+
+	if (string[0] == '.')
+	{
+		for (; string[offset] && isdig(string[offset]); offset++)
+		{
+			p->precision *= 10;
+			p->precision += (string[offset] - '0');
+		}
+	}
+
+	return (offset);
+}
+
+int setspecifier(const char *string, param *p, spec *specs)
+{
+	int offset = 0;
 	int i;
 
+	for (i = 0; (specs + i)->func != NULL; i++)
+	{
+		for (offset = 0; string[offset] == (specs + i)->spec_string[offset];
+				offset++)
+		{
+			if ((specs + i)->spec_string[offset + 1] == '\0')
+			{
+				p->specifier = (specs + i);
+				return (offset + 1);
+			}
+		}
+	}
 
+	return (-1);
 }
 
 int isdig(char c)
@@ -73,7 +103,7 @@ int isdig(char c)
 	return (0);
 }
 
-param get_full(const char *string, unsigned int specnum)
+param get_full(const char *string, spec *specs)
 {
 	int i;
 	char flags;
