@@ -19,7 +19,7 @@ It will also print a variety of data, passed as additional arguments after the f
 These characters will tell \fB_printf()\fR what type of conversion is needed.
 Here are their meanings:
 .PP
-\fBd, i\fR   These specifiers refer to an argument of type INT.
+\fBd, i\fR   This specifier will print an argument of type INT.
 .PP
 \fBs\fR      This specifier will print an argument of type CHAR *.
 .PP
@@ -36,6 +36,8 @@ Here are their meanings:
 \fBr\fR      This specifier will print a CHAR * in reverse.
 .PP
 \fBR\fR      This specifier will print a CHAR * in ROT13 format.
+.PP
+\fBS\fR      This specifier will print a string, including the special char.
 .PP
 .SH AUTHORS
 Ben Keener and Travis Bearden
