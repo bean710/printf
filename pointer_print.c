@@ -3,6 +3,7 @@
 /**
  * print_ptr - Prints the address held by a pointer in hexadecimal.
  * @p: void pointer to a unsigned long int.
+ * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
 int print_ptr(void *p, param params)
