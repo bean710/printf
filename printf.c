@@ -54,40 +54,6 @@ int _printf(const char *string, ...)
 }
 
 /**
- * loop_specifiers - Loops through the specifiers and runs a function if it
- * exists
- * @valist: Address of the va_list variable to use
- * @specnum: Number of specifiers to loop through
- * @specifier: The character from the format string that could be a specifier
- * @specs: Pointer to the first spec in an array of valid specifiers
- * @count: Pointer to the int that counts the number of characters printed
- * @flag: A flag to signal if a specifier was found
- *
- * Return: How many characters should be skipped based on if a specifier was
- * found or not
- */
-int loop_specifiers(va_list *valist, unsigned int specnum, char specifier,
-		spec *specs, int *count, int *flag)
-{
-	unsigned int k;
-	void *vp;
-
-	for (k = 0; k < specnum && *flag == 0; k++)
-	{
-		if (*(specs[k].spec_string) == specifier)
-		{
-			vp = get_mem(specs[k], valist);
-			(*count) += specs[k].func(vp);
-			free(vp);
-			*flag = 1;
-			return (1);
-		}
-	}
-
-	return (0);
-}
-
-/**
  * get_specs - Gives a pointer to allocated space containing all predefined
  * spec structs
  * @i: Pointer to an unsigned int which will be iterated based on how many
@@ -112,6 +78,7 @@ spec *get_specs(unsigned int *i)
 		{"r", print_reverse, 's'},
 		{"S", print_special, 's'},
 		{"R", print_rot, 's'},
+		{"li", print_long_decimal, 'l'},
 		{NULL, NULL, '\0'}
 	};
 
@@ -160,6 +127,13 @@ void *get_mem(spec s, va_list *valist)
 			if (vp == NULL)
 				return (NULL);
 			*(unsigned int *)vp = va_arg(*valist, unsigned int);
+			return (vp);
+
+		case 'l':
+			vp = malloc(sizeof(long int));
+			if (vp == NULL)
+				return (NULL);
+			*(long int *)vp = va_arg(*valist, long int);
 			return (vp);
 	}
 
