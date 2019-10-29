@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 #include <stddef.h>
 
 int setflags(const char *string, param *p)
@@ -58,6 +59,7 @@ int setprecision(const char *string, param* p)
 
 	if (string[0] == '.')
 	{
+		offset++;
 		for (; string[offset] && isdig(string[offset]); offset++)
 		{
 			p->precision *= 10;
@@ -109,13 +111,19 @@ param get_full(const char *string, spec *specs)
 	char flags;
 	int offset = 0;
 
+	printf("Getting params\n");
+
 	param res = {0, 0, 0, 0, 0, 0};
 
 	offset = setflags(string, &res);
+	printf("Got flags: %d, %d, %d, %d\n", res.plus, res.minus, res.zero, res.space);
 	offset += setwidth(string + offset, &res);
+	printf("Got width: %d\n", res.width);
 	offset += setprecision(string + offset, &res);
+	printf("Got precision: %d\n", res.precision);
 
 	offset += setspecifier(string + offset, &res, specs);
+	printf("Got specifier: %s\n", res.specifier->spec_string);
 
 	return (res);
 }
