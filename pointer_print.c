@@ -11,7 +11,7 @@ int print_ptr(void *p, param params)
 	unsigned long int ptr_ul = *(unsigned long int *)p;
 	int count = 0;
 
-	if (params->plus)
+	if (params.plus)
 		count += _putchar('+');
 
 	_putchar('0');

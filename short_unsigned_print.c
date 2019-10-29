@@ -8,7 +8,7 @@
  */
 int print_unsig_short(void *suip, param params)
 {
-	unsigned short int i = *(unsigned short int *)luip;
+	unsigned short int i = *(unsigned short int *)suip;
 
 	return (short_base_conv(i, 10, "0123456789"));
 }
