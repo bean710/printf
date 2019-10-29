@@ -42,7 +42,10 @@ int setwidth(const char *string, param *p)
 	int i;
 
 	if (string[0] == '*')
-		return (-1);
+	{
+		p->width = -1;
+		return (1);
+	}
 
 	for (i = 0; string[i] && isdig(string[i]); i++)
 	{
@@ -56,6 +59,12 @@ int setwidth(const char *string, param *p)
 int setprecision(const char *string, param* p)
 {
 	int offset = 0;
+
+	if (string[0] == '.' && string[1] == '*')
+	{
+		p->precision = -1;
+		return (2);
+	}
 
 	if (string[0] == '.')
 	{
@@ -105,25 +114,21 @@ int isdig(char c)
 	return (0);
 }
 
-param get_full(const char *string, spec *specs)
+get_full(const char *string, spec *specs, param *res)
 {
-	int i;
-	char flags;
 	int offset = 0;
 
-	printf("Getting params\n");
+	printf("Getting params for: %s\n", string);
 
-	param res = {0, 0, 0, 0, 0, 0};
+	offset = setflags(string, res);
+	printf("Got flags: %d, %d, %d, %d\n", res->plus, res->minus, res->zero, res->space);
+	offset += setwidth(string + offset, res);
+	printf("Got width: %d\n", res->width);
+	offset += setprecision(string + offset, res);
+	printf("Got precision: %d\n", res->precision);
 
-	offset = setflags(string, &res);
-	printf("Got flags: %d, %d, %d, %d\n", res.plus, res.minus, res.zero, res.space);
-	offset += setwidth(string + offset, &res);
-	printf("Got width: %d\n", res.width);
-	offset += setprecision(string + offset, &res);
-	printf("Got precision: %d\n", res.precision);
+	offset += setspecifier(string + offset, res, specs);
+	printf("Got specifier: %s\n", res->specifier->spec_string);
 
-	offset += setspecifier(string + offset, &res, specs);
-	printf("Got specifier: %s\n", res.specifier->spec_string);
-
-	return (res);
+	return (offset);
 }

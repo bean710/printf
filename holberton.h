@@ -46,7 +46,7 @@ int setwidth(const char *string, param *p);
 int setprecision(const char *string, param* p);
 int setspecifier(const char *string, param *p, spec *specs);
 int isdig(char c);
-param get_full(const char *string, spec *specs);
+param get_full(const char *string, spec *specs, param *);
 
 int print_decimal(void *);
 int print_string(void *);
