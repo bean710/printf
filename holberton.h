@@ -3,6 +3,23 @@
 
 #include <stdarg.h>
 
+struct specifier;
+
+typedef struct parameters
+{
+	/* Flags */
+	char plus;
+	char minus;
+	char zero;
+	char space;
+	char pound;
+
+	int width;
+	int precision;
+
+	struct specifier *specifier;
+} param;
+
 /**
  * struct specifier - for comparing printf specifiers.
  * @spec_string: The printf specifier
@@ -19,21 +36,6 @@ typedef struct specifier
 	int (*func)(void *, param);
 	char type;
 } spec;
-
-typedef struct parameters
-{
-	/* Flags */
-	char plus;
-	char minus;
-	char zero;
-	char space;
-	char pound;
-
-	int width;
-	int precision;
-
-	spec *specifier;
-} param;
 
 spec *get_specs(unsigned int *);
 void print_number(int n);
@@ -53,10 +55,10 @@ void *get_mem(spec, va_list *);
 int loop_specifiers(va_list *, unsigned int, char, spec *, int *, int *);
 int _putchar(char);
 int _printf(const char *, ...);
-int print_binary(void *);
+int print_binary(void *, param);
 unsigned int u_pow(unsigned int, unsigned int);
-int print_reverse(void *);
-int print_rot(void *);
+int print_reverse(void *, param);
+int print_rot(void *, param);
 
 int print_decimal(void *, param);
 int print_string(void *, param);
@@ -75,7 +77,7 @@ int print_unsig_long(void *luip, param);
 int print_ptr(void *p, param);
 int print_oct_long(void *luop, param);
 
-int print_long_decimal(void *ip, param params);
+int print_long_decimal(void *ip, param p);
 void print_long_number(long int n);
 int _pow_long(int a, int b);
 int getnum_long(long int num, long int index);
