@@ -93,11 +93,21 @@ long int _pow_long(int a, int b);
 int getnum_long(long int num, long int index);
 long int getlen_long(long int num);
 
+int print_unsigned_long_decimal(void *ulivp, param params);
+
 /* short number functions */
 int short_base_conv(unsigned short int, unsigned short int, char *);
 int print_short_hex(void *, param);
 int print_short_hex_u(void *, param);
 int print_oct_short(void *, param);
 int print_unsig_short(void *, param);
+
+int print_short_decimal(void *ip, param p);
+void print_short_number(long int n);
+short int _pow_long(int a, int b);
+int getnum_short(long int num, long int index);
+short int getlen_long(long int num);
+
+int print_unsigned_short_decimal(void *usivp, param params);
 
 #endif

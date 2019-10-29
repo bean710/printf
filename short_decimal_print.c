@@ -13,6 +13,8 @@ int print_short_decimal(void *ip, param params)
 
 	if (params.plus && decimal > -1)
 		count += _putchar('+');
+	if (params.space && decimal > -1)
+		count += _putchar(' ');
 
 	print_short_number(decimal);
 
