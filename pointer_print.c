@@ -13,6 +13,8 @@ int print_ptr(void *p, param params)
 
 	if (params.plus)
 		count += _putchar('+');
+	else if (params.space)
+		count += _putchar(' ');
 
 	_putchar('0');
 	_putchar('x');

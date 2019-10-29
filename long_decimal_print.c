@@ -13,6 +13,8 @@ int print_long_decimal(void *ip, param params)
 
 	if (params.plus && decimal > -1)
 		count += _putchar('+');
+	else if (params.space && decimal > -1)
+		count += _putchar(' ');
 
 	print_long_number(decimal);
 

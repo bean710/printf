@@ -12,6 +12,8 @@ int print_decimal(void *ip, param params)
 
 	if (params.plus && decimal > -1)
 		count += _putchar('+');
+	else if (params.space && decimal > -1)
+		count += _putchar(' ');
 
 	print_number(decimal);
 
