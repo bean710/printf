@@ -6,7 +6,7 @@
  * @s: pointer to a string
  * Return: The number of characters printed.
  */
-int print_rot(void *s)
+int print_rot(void *s, param params)
 {
 	int i, j;
 	char *arr = *(char **)s;

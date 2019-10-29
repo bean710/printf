@@ -5,7 +5,7 @@
  * @luop: Void pointer to an address in memory holding an unsigned long int.
  * Return: Number of characters printed.
  */
-int print_oct_long(void *luop)
+int print_oct_long(void *luop, param params)
 {
 	unsigned long int oct = *(unsigned long int *)luop;
 

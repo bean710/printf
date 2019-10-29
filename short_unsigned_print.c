@@ -6,7 +6,7 @@
  * integer.
  * Return: The number of characters printed.
  */
-int print_unsig_short(void *suip)
+int print_unsig_short(void *suip, param params)
 {
 	unsigned short int i = *(unsigned short int *)suip;
 

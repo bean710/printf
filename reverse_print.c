@@ -6,7 +6,7 @@
  * @s: a void pointer to a string
  * Return: the number of characters
  */
-int print_reverse(void *s)
+int print_reverse(void *s, param params)
 {
 	char *arr = *(char **)s;
 	int i = 0;

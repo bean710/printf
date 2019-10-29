@@ -26,7 +26,7 @@ int long_base_converter(unsigned long int i, unsigned long int base, char *set)
  * @luhp: Void pointer to an address in memory which holds an unsigned integer.
  * Return: the number of characters printed.
  */
-int print_long_hex(void *luhp)
+int print_long_hex(void *luhp, param params)
 {
 	unsigned long int hex = *(unsigned long int *)luhp;
 	char *set = "0123456789abcdef";
@@ -40,7 +40,7 @@ int print_long_hex(void *luhp)
  * @luhp: Void pointer to an address in memory which holds a long unsigned int.
  * Return: the number of characters printed.
  */
-int print_long_hex_u(void *luhp)
+int print_long_hex_u(void *luhp, param params)
 {
 	unsigned long int hex = *(unsigned long int *)luhp;
 	char *set = "0123456789abcdef";

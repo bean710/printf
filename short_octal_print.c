@@ -5,7 +5,7 @@
  * @suop: Void pointer to an address in memory holding an unsigned short int.
  * Return: Number of characters printed.
  */
-int print_oct_short(void *suop)
+int print_oct_short(void *suop, param params)
 {
 	unsigned short int oct = *(unsigned short int *)suop;
 
