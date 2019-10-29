@@ -30,6 +30,8 @@ typedef struct parameters
 
 	int width;
 	int precision;
+
+	spec *specifier;
 } param;
 
 spec *get_specs(unsigned int *);
@@ -38,6 +40,13 @@ int _pow(int a, int b);
 int getnum(int num, int index);
 int getlen(int num);
 int base_converter(unsigned int, unsigned int, char *);
+
+int setflags(const char *string, param *p);
+int setwidth(const char *string, param *p);
+int setprecision(const char *string, param* p);
+int setspecifier(const char *string, param *p, spec *specs);
+int isdig(char c);
+param get_full(const char *string, spec *specs);
 
 int print_decimal(void *);
 int print_string(void *);

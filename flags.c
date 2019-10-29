@@ -115,5 +115,7 @@ param get_full(const char *string, spec *specs)
 	offset += setwidth(string + offset, &res);
 	offset += setprecision(string + offset, &res);
 
+	offset += setspecifier(string + offset, &res, specs);
+
 	return (res);
 }
