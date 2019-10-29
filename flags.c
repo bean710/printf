@@ -5,10 +5,8 @@
 int setflags(const char *string, param *p)
 {
 	unsigned int i, offset = 0;
-	unsigned char result = 0;
 
-	do
-	{
+	do {
 		i = 0;
 		switch (string[offset])
 		{
@@ -31,6 +29,12 @@ int setflags(const char *string, param *p)
 				p->space = 1;
 				i++;
 				break;
+
+			case '#':
+				p->pound = 1;
+				i++;
+				break;
+
 		}
 	} while (i && string[++offset]);
 
@@ -56,7 +60,7 @@ int setwidth(const char *string, param *p)
 	return (i);
 }
 
-int setprecision(const char *string, param* p)
+int setprecision(const char *string, param *p)
 {
 	int offset = 0;
 
@@ -119,21 +123,32 @@ int get_full(const char *string, spec *specs, param *res)
 	int offset = 0;
 	int specifier;
 
-	printf("Getting params for: %s\n", string);
+	/*
+	 * printf("Getting params for: %s\n", string);
+	 */
 
 	offset = setflags(string, res);
-	printf("Got flags: %d, %d, %d, %d\n", res->plus, res->minus, res->zero, res->space);
+	/*
+	 * printf("Got flags: %d, %d, %d, %d\n", res->plus, res->minus,
+	 * res->zero, res->space);
+	 */
 	offset += setwidth(string + offset, res);
-	printf("Got width: %d\n", res->width);
+	/*
+	 * printf("Got width: %d\n", res->width);
+	 */
 	offset += setprecision(string + offset, res);
-	printf("Got precision: %d\n", res->precision);
+	/*
+	 * printf("Got precision: %d\n", res->precision);
+	 */
 
 	specifier = setspecifier(string + offset, res, specs);
 	if (specifier == -1)
 		return (-1);
 
 	offset += specifier;
-	printf("Got specifier: %s\n", res->specifier->spec_string);
+	/*
+	 * printf("Got specifier: %s\n", res->specifier->spec_string);
+	 */
 
 	return (offset);
 }

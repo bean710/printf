@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 
@@ -13,7 +14,9 @@ int _printf(const char *string, ...)
 	unsigned int i;
 	va_list *valist;
 	spec *specs;
-	int count = 0, flag = 0;
+	param params;
+	param zeros = {0, 0, 0, 0, 0, 0, 0, NULL};
+	int count = 0, flag = 0, tmp;
 	unsigned int specnum = 0;
 
 	valist = malloc(sizeof(va_list));
@@ -32,8 +35,16 @@ int _printf(const char *string, ...)
 				i++;
 				flag = 1;
 			}
-			i += loop_specifiers(valist, specnum, string[i + 1], specs,
-					&count, &flag);
+			params = zeros;
+			tmp = get_full(string + i + 1, specs, &params);
+			if (tmp < 0)
+			{
+				count += _putchar('%');
+				continue;
+			}
+
+			i += tmp;
+			printf("%s", params.specifier->spec_string);
 		}
 		if (flag == 0)
 			count += _putchar(string[i]);
@@ -41,8 +52,6 @@ int _printf(const char *string, ...)
 	free(specs), free(valist);
 	return (count);
 }
-
-
 
 /**
  * loop_specifiers - Loops through the specifiers and runs a function if it

@@ -27,6 +27,7 @@ typedef struct parameters
 	char minus;
 	char zero;
 	char space;
+	char pound;
 
 	int width;
 	int precision;
