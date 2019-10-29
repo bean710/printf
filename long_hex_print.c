@@ -30,8 +30,16 @@ int print_long_hex(void *luhp, param params)
 {
 	unsigned long int hex = *(unsigned long int *)luhp;
 	char *set = "0123456789abcdef";
+	int count = 0;
 
-	return (long_base_converter(hex, 16, set));
+	if (params.pound)
+	{
+		_putchar('0');
+		_putchar('x');
+		count += 2;
+	}
+
+	return (long_base_converter(hex, 16, set) + count);
 }
 
 /**
