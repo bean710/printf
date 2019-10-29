@@ -4,7 +4,17 @@
 #include <stdarg.h>
 
 struct specifier;
-
+/**
+ * struct parameters - for storing printf argument descriptions
+ * @plus: '+' flag
+ * @minus: '-' flag
+ * @zero: '0' flag
+ * @space: ' ' flag
+ * @pound: '#' flag
+ * @width: int value of width
+ * @precision: int value of precision
+ * @specifier: a struct with a specifier, it's relevant function ptr, and type
+ */
 typedef struct parameters
 {
 	/* Flags */
