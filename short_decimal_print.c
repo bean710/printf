@@ -26,7 +26,7 @@ int print_short_decimal(void *ip, param params)
  * print_number - prints a number
  * @n: number to print
  */
-void print_short_number(long int n)
+void print_short_number(short int n)
 {
 	short int i;
 
@@ -50,9 +50,9 @@ void print_short_number(long int n)
  *
  * Return: a^b
  */
-short int _pow_long(int a, int b)
+short int _pow_short(short int a, short int b)
 {
-	int i, ans;
+	short int i, ans;
 
 	if (b <= 0)
 		return (1);
@@ -73,7 +73,7 @@ short int _pow_long(int a, int b)
  *
  * Return: The 'index'th digit of num
  */
-int getnum_short(long int num, long int index)
+int getnum_short(short int num, short int index)
 {
 	short int l;
 
@@ -88,7 +88,7 @@ int getnum_short(long int num, long int index)
  *
  * Return: length of number 'num'
  */
-short int getlen_long(long int num)
+short int getlen_short(short int num)
 {
 	short int i;
 

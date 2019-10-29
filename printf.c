@@ -86,9 +86,9 @@ spec *get_specs(unsigned int *i)
 		{"lx", print_long_hex, 'L'},
 		{"lX", print_long_hex_u, 'L'},
 		{"lo", print_oct_long, 'L'},
-		{"hu", print_unsigned_short_decimal, 'H'},
-		{"hd", print_short_decimal, 'h'},
-		{"hi", print_short_decimal, 'h'},
+		{"hu", print_unsigned_short_decimal, 'i'},
+		{"hd", print_short_decimal, 'i'},
+		{"hi", print_short_decimal, 'i'},
 		{NULL, NULL, '\0'}
 	};
 
@@ -151,20 +151,6 @@ void *get_mem(spec s, va_list *valist)
 			if (vp == NULL)
 				return (NULL);
 			*(unsigned long int *)vp = va_arg(*valist, unsigned long int);
-			return (vp);
-
-		case 'h':
-			vp = malloc(sizeof(short int));
-			if (vp == NULL)
-				return (NULL);
-			*(short int *)vp = va_arg(*valist, short int);
-			return (vp);
-
-		case 'H':
-			vp = malloc(sizeof(unsigned short int));
-			if (vp == NULL)
-				return (NULL);
-			*(unsigned short int *)vp = va_arg(*valist, unsigned short int);
 			return (vp);
 	}
 
