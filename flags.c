@@ -84,10 +84,10 @@ int setspecifier(const char *string, param *p, spec *specs)
 	int offset = 0;
 	int i;
 
-	for (i = 0; (specs + i)->func != NULL; i++)
+	for (i = 0; (specs + i)->spec_string != NULL; i++)
 	{
-		for (offset = 0; string[offset] == (specs + i)->spec_string[offset];
-				offset++)
+		for (offset = 0; string[offset] &&
+				string[offset] == (specs + i)->spec_string[offset]; offset++)
 		{
 			if ((specs + i)->spec_string[offset + 1] == '\0')
 			{
@@ -114,9 +114,10 @@ int isdig(char c)
 	return (0);
 }
 
-get_full(const char *string, spec *specs, param *res)
+int get_full(const char *string, spec *specs, param *res)
 {
 	int offset = 0;
+	int specifier;
 
 	printf("Getting params for: %s\n", string);
 
@@ -127,7 +128,11 @@ get_full(const char *string, spec *specs, param *res)
 	offset += setprecision(string + offset, res);
 	printf("Got precision: %d\n", res->precision);
 
-	offset += setspecifier(string + offset, res, specs);
+	specifier = setspecifier(string + offset, res, specs);
+	if (specifier == -1)
+		return (-1);
+
+	offset += specifier;
 	printf("Got specifier: %s\n", res->specifier->spec_string);
 
 	return (offset);
