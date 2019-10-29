@@ -1,5 +1,5 @@
 #include "holberton.h"
- 
+
 /**
  * print_oct_short - prints an unsigned short int as an octal.
  * @suop: Void pointer to an address in memory holding an unsigned short int.
@@ -10,7 +10,7 @@ int print_oct_short(void *suop, param params)
 {
 	unsigned short int oct = *(unsigned short int *)suop;
 	int count = 0;
-	
+
 	if (params.pound)
 		count += _putchar('0');
 
