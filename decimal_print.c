@@ -3,6 +3,7 @@
 /**
  * print_decimal - prints an int
  * @ip: Pointer to an int
+ * @params: a structure containing info about the argument
  * Return: the number of chars printed.
  */
 int print_decimal(void *ip, param params)
