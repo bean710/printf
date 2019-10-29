@@ -34,10 +34,10 @@ int print_long_hex(void *luhp, param params)
 
 	if (params.pound)
 	{
-		count += _putchar('0');
-		count += _putchar('x');
+		_putchar('0');
+		_putchar('x');
+		count += 2;
 	}
-
 
 	return (long_base_converter(hex, 16, set) + count);
 }
