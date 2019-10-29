@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_decimal - prints an int
@@ -34,8 +35,8 @@ void print_long_number(long int n)
 	}
 	else
 	{
-		for (i = 0; i < getlen(n); i++)
-			_putchar('0' + getnum(n, i));
+		for (i = 0; i < getlen_long(n); i++)
+			_putchar('0' + getnum_long(n, i));
 	}
 }
 
@@ -73,8 +74,8 @@ int getnum_long(long int num, long int index)
 {
 	long int l;
 
-	l = getlen(num);
-	num = num / _pow(10, l - 1 - index);
+	l = getlen_long(num);
+	num = num / _pow_long(10, l - 1 - index);
 	return (num % 10);
 }
 
