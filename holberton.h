@@ -49,15 +49,6 @@ int setspecifier(const char *string, param *p, spec *specs);
 int isdig(char c);
 int get_full(const char *string, spec *specs, param *);
 
-int print_decimal(void *, param);
-int print_string(void *, param);
-int print_char(void *, param);
-int print_hex(void *, param);
-int print_hex_u(void *, param);
-int print_oct(void *), param;
-int print_unsig(void *, param);
-int print_special(void *, param);
-
 void *get_mem(spec, va_list *);
 int loop_specifiers(va_list *, unsigned int, char, spec *, int *, int *);
 int _putchar(char);
@@ -67,19 +58,28 @@ unsigned int u_pow(unsigned int, unsigned int);
 int print_reverse(void *);
 int print_rot(void *);
 
+int print_decimal(void *, param);
+int print_string(void *, param);
+int print_char(void *, param);
+int print_hex(void *, param);
+int print_hex_u(void *, param);
+int print_oct(void *, param);
+int print_unsig(void *, param);
+int print_special(void *, param);
+
 /* long number functions */
 int long_base_converter(unsigned long int i, unsigned long int base, char *set);
-int print_long_hex(void *luhp);
-int print_long_hex_u(void *luhp);
-int print_unsig_long(void *luip);
-int print_ptr(void *p);
-int print_oct_long(void *luop);
+int print_long_hex(void *luhp, param);
+int print_long_hex_u(void *luhp, param);
+int print_unsig_long(void *luip, param);
+int print_ptr(void *p, param);
+int print_oct_long(void *luop, param);
 
 /* short number functions */
 int short_base_conv(unsigned short int i, unsigned short int base, char *set);
-int print_short_hex(void *suhp);
-int print_short_hex_u(void *suhp);
-int print_oct_short(void *suop);
-int print_unsig_short(void *suip);
+int print_short_hex(void *suhp, param);
+int print_short_hex_u(void *suhp, param);
+int print_oct_short(void *suop, param);
+int print_unsig_short(void *suip, param);
 
 #endif
