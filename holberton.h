@@ -75,6 +75,12 @@ int print_unsig_long(void *luip, param);
 int print_ptr(void *p, param);
 int print_oct_long(void *luop, param);
 
+int print_long_decimal(void *ip, param params);
+void print_long_number(long int n);
+int _pow_long(int a, int b);
+int getnum_long(long int num, long int index);
+long int getlen_long(long int num);
+
 /* short number functions */
 int short_base_conv(unsigned short int i, unsigned short int base, char *set);
 int print_short_hex(void *suhp, param);
