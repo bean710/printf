@@ -24,6 +24,7 @@ int long_base_converter(unsigned long int i, unsigned long int base, char *set)
 /**
  * print_long_hex - Prints a long unsigned integer as a hexadecimal.
  * @luhp: Void pointer to an address in memory which holds an unsigned integer.
+ * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
 int print_long_hex(void *luhp, param params)
@@ -46,6 +47,7 @@ int print_long_hex(void *luhp, param params)
  * print_long_hex_u - Prints a long unsigned integer as a hexadecimal in
  * uppercase format.
  * @luhp: Void pointer to an address in memory which holds a long unsigned int.
+ * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
 int print_long_hex_u(void *luhp, param params)
