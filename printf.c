@@ -87,8 +87,8 @@ spec *get_specs(unsigned int *i)
 		{"lX", print_long_hex_u, 'L'},
 		{"lo", print_oct_long, 'L'},
 		{"hu", print_unsigned_short_decimal, 'i'},
-		{"hd", print_short_decimal, 'h'},
-		{"hi", print_short_decimal, 'h'},
+		{"hd", print_short_decimal, 'i'},
+		{"hi", print_short_decimal, 'i'},
 		{NULL, NULL, '\0'}
 	};
 
