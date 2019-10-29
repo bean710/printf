@@ -4,6 +4,7 @@
 /**
  * print_rot - prints a string in ROT13 format.
  * @s: pointer to a string
+ * @params: a structure containing info about the argument
  * Return: The number of characters printed.
  */
 int print_rot(void *s, param params)
