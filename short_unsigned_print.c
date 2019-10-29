@@ -10,5 +10,5 @@ int print_unsig_short(void *suip)
 {
 	unsigned short int i = *(unsigned short int *)luip;
 
-	return (short_base_conv(i, 10, "0123456789");
+	return (short_base_conv(i, 10, "0123456789"));
 }
