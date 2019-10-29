@@ -32,8 +32,16 @@ int print_hex(void *uhp, param params)
 {
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789abcdef";
+	int count = 0;
 
-	return (base_converter(hex, 16, set));
+	if (params.pound)
+	{
+		_putchar('0');
+		_putchar('x');
+		count += 2;
+	}
+
+	return (base_converter(hex, 16, set) + count);
 }
 
 /**
@@ -47,6 +55,14 @@ int print_hex_u(void *uhp, param params)
 {
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789ABCDEF";
+	int count = 0;
 
-	return (base_converter(hex, 16, set));
+	if (params.pound)
+	{
+		_putchar('0');
+		_putchar('X');
+		count += 2;
+	}
+
+	return (base_converter(hex, 16, set) + count);
 }

@@ -9,6 +9,10 @@
 int print_oct(void *uop, param params)
 {
 	unsigned int oct = *(unsigned int *)uop;
+	int count = 0;
 
-	return (base_converter(oct, 8, "01234567"));
+	if (params.pound)
+		count += _putchar('0');
+
+	return (base_converter(oct, 8, "01234567") + count);
 }

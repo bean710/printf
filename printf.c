@@ -44,7 +44,7 @@ int _printf(const char *string, ...)
 				continue;
 			}
 			vp = get_mem(*(params.specifier), valist);
-			params.specifier->func(vp, params);
+			count += params.specifier->func(vp, params);
 
 			i += arg_description_len + 1;
 		}
