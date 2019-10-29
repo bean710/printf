@@ -4,7 +4,17 @@
 #include <stdarg.h>
 
 struct specifier;
-
+/**
+ * struct parameters - for storing printf argument descriptions
+ * @plus: '+' flag
+ * @minus: '-' flag
+ * @zero: '0' flag
+ * @space: ' ' flag
+ * @pound: '#' flag
+ * @width: int value of width
+ * @precision: int value of precision
+ * @specifier: a struct with a specifier, it's relevant function ptr, and type
+ */
 typedef struct parameters
 {
 	/* Flags */
@@ -70,12 +80,12 @@ int print_unsig(void *, param);
 int print_special(void *, param);
 
 /* long number functions */
-int long_base_converter(unsigned long int i, unsigned long int base, char *set);
-int print_long_hex(void *luhp, param);
-int print_long_hex_u(void *luhp, param);
-int print_unsig_long(void *luip, param);
-int print_ptr(void *p, param);
-int print_oct_long(void *luop, param);
+int long_base_converter(unsigned long int, unsigned long int, char *);
+int print_long_hex(void *, param);
+int print_long_hex_u(void *, param);
+int print_unsig_long(void *, param);
+int print_ptr(void *, param);
+int print_oct_long(void *, param);
 
 int print_long_decimal(void *ip, param p);
 void print_long_number(long int n);
@@ -84,10 +94,10 @@ int getnum_long(long int num, long int index);
 long int getlen_long(long int num);
 
 /* short number functions */
-int short_base_conv(unsigned short int i, unsigned short int base, char *set);
-int print_short_hex(void *suhp, param);
-int print_short_hex_u(void *suhp, param);
-int print_oct_short(void *suop, param);
-int print_unsig_short(void *suip, param);
+int short_base_conv(unsigned short int, unsigned short int, char *);
+int print_short_hex(void *, param);
+int print_short_hex_u(void *, param);
+int print_oct_short(void *, param);
+int print_unsig_short(void *, param);
 
 #endif
