@@ -6,7 +6,7 @@
  * integer.
  * Return: The number of characters printed.
  */
-int print_unsig_long(void *luip)
+int print_unsig_long(void *luip, param params)
 {
 	unsigned long int i = *(unsigned int *)luip;
 
