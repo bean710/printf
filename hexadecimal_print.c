@@ -25,7 +25,7 @@ int base_converter(unsigned int i, unsigned int base, char *set)
 /**
  * print_hex - Prints an unsigned integer as a hexidecimal
  * @uhp: Void pointer to an adress in memory which holds an unsigned integer
- *
+ * @params: a structure containing info about the argument
  * Return: The number of characters printed
  */
 int print_hex(void *uhp, param params)
@@ -48,7 +48,7 @@ int print_hex(void *uhp, param params)
  * print_hex_u - Prints an unsigned integer as a hexidecimal in uppercase
  * format
  * @uhp: Void pointer to an adress in memory which holds an unsigned integer
- *
+ * @params: a structure containing info about the argument
  * Return: The number of characters printed
  */
 int print_hex_u(void *uhp, param params)
