@@ -47,7 +47,7 @@ void print_long_number(long int n)
  *
  * Return: a^b
  */
-int _pow_long(int a, int b)
+long int _pow_long(int a, int b)
 {
 	int i, ans;
 

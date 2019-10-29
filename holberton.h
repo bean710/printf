@@ -79,7 +79,7 @@ int print_oct_long(void *luop, param);
 
 int print_long_decimal(void *ip, param p);
 void print_long_number(long int n);
-int _pow_long(int a, int b);
+long int _pow_long(int a, int b);
 int getnum_long(long int num, long int index);
 long int getlen_long(long int num);
 
