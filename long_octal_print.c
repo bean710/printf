@@ -8,6 +8,11 @@
 int print_oct_long(void *luop, param params)
 {
 	unsigned long int oct = *(unsigned long int *)luop;
+	int count = 0;
 
-	return (long_base_converter(oct, 8, "01234567"));
+	if (params.pound)
+	{
+		count += _putchar('0');
+	}
+	return (long_base_converter(oct, 8, "01234567") + count);
 }
