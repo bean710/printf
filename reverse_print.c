@@ -4,6 +4,7 @@
 /**
  * print_reverse - prints a string in reverse.
  * @s: a void pointer to a string
+ * @params: a structure containing info about the argument
  * Return: the number of characters
  */
 int print_reverse(void *s, param params)
