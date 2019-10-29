@@ -5,7 +5,7 @@
  * @ip: A pointer to an unsigned int
  * Return: the number of characters printed.
  */
-int print_binary(void *ip)
+int print_binary(void *ip, param params)
 {
 	unsigned int n = *(unsigned int *)ip;
 	unsigned int i;

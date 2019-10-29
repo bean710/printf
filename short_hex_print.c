@@ -26,7 +26,7 @@ int short_base_conv(unsigned short int i, unsigned short int base, char *set)
  * @suhp: Void pointer to an address in memory which holds an unsigned integer.
  * Return: the number of characters printed.
  */
-int print_short_hex(void *suhp)
+int print_short_hex(void *suhp, param params)
 {
 	unsigned short int hex = *(unsigned short int *)suhp;
 	char *set = "0123456789abcdef";
@@ -40,7 +40,7 @@ int print_short_hex(void *suhp)
  * @luhp: Void pointer to an address in memory which holds a long unsigned int.
  * Return: the number of characters printed.
  */
-int print_short_hex_u(void *suhp)
+int print_short_hex_u(void *suhp, param params)
 {
 	unsigned short int hex = *(unsigned short int *)suhp;
 	char *set = "0123456789abcdef";
