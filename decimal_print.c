@@ -5,13 +5,17 @@
  * @ip: Pointer to an int
  * Return: the number of chars printed.
  */
-int print_decimal(void *ip)
+int print_decimal(void *ip, param params)
 {
-	int i = *(int *)ip;
+	int decimal = *(int *)ip;
+	int count = 0;
 
-	print_number(i);
+	if (params.plus && decimal > -1)
+		count += _putchar('+');
 
-	return (getlen(i) + (i < 0 ? 1 : 0));
+	print_number(decimal);
+
+	return (getlen(decimal) + count + (decimal < 0 ? 1 : 0));
 }
 
 /**

@@ -16,7 +16,7 @@ int _printf(const char *string, ...)
 	spec *specs;
 	param params;
 	param zeros = {0, 0, 0, 0, 0, 0, 0, NULL};
-	int count = 0, flag = 0, tmp;
+	int count = 0, flag = 0, arg_description_len;
 	unsigned int specnum = 0;
 
 	valist = malloc(sizeof(va_list));
@@ -36,14 +36,14 @@ int _printf(const char *string, ...)
 				flag = 1;
 			}
 			params = zeros;
-			tmp = get_full(string + i + 1, specs, &params);
-			if (tmp < 0)
+			arg_description_len = get_full(string + i + 1, specs, &params);
+			if (arg_description_len < 0)
 			{
 				count += _putchar('%');
 				continue;
 			}
 
-			i += tmp;
+			i += arg_description_len;
 			printf("%s", params.specifier->spec_string);
 		}
 		if (flag == 0)

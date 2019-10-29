@@ -16,7 +16,7 @@
 typedef struct specifier
 {
 	char *spec_string;
-	int (*func)(void *);
+	int (*func)(void *, param);
 	char type;
 } spec;
 
