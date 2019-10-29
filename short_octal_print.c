@@ -8,6 +8,10 @@
 int print_oct_short(void *suop, param params)
 {
 	unsigned short int oct = *(unsigned short int *)suop;
+	int count = 0;
+	
+	if (params.pound)
+		count += _putchar('0');
 
-	return (short_base_conv(oct, 8, "01234567"));
+	return (short_base_conv(oct, 8, "01234567") + count);
 }
