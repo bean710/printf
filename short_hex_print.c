@@ -30,8 +30,15 @@ int print_short_hex(void *suhp, param params)
 {
 	unsigned short int hex = *(unsigned short int *)suhp;
 	char *set = "0123456789abcdef";
+	int count = 0;
 
-	return (short_base_conv(hex, 16, set));
+	if (params.pound)
+	{
+		count += _putchar('0');
+		count += _putchar('x');
+	}
+
+	return (short_base_conv(hex, 16, set) + count);
 }
 
 /**
@@ -44,6 +51,14 @@ int print_short_hex_u(void *suhp, param params)
 {
 	unsigned short int hex = *(unsigned short int *)suhp;
 	char *set = "0123456789abcdef";
+	int count = 0;
 
-	return (short_base_conv(hex, 16, set));
+	if (params.pound)
+	{
+		count += _putchar('0');
+		count += _putchar('X');
+	}
+
+
+	return (short_base_conv(hex, 16, set) + count);
 }
