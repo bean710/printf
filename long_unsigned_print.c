@@ -4,6 +4,7 @@
  * print_unsig_long - Prints an unsigned long integer
  * @uip: Void opinter to an address in memory which holds an unsigned long
  * integer.
+ * @params: a structure containing info about the argument
  * Return: The number of characters printed.
  */
 int print_unsig_long(void *luip, param params)

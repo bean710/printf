@@ -5,7 +5,7 @@
  * their ASCII value
  * @ssp: Void pointer to an adress where a pointer to the first character in
  * the string to be printed is stored
- *
+ * @params: a structure containing info about the argument
  * Return: Number of characters printed
  */
 int print_special(void *ssp, param params)

@@ -3,7 +3,7 @@
 /**
  * print_oct - Prints an unsigned int as an octal
  * @uop: Void pointer to an adress in memory holding an unsigned int
- *
+ * @params: a structure containing info about the argument
  * Return: Number of characters printed
  */
 int print_oct(void *uop, param params)

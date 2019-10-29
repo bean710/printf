@@ -24,6 +24,7 @@ int short_base_conv(unsigned short int i, unsigned short int base, char *set)
 /**
  * print_long_hex - Prints a long unsigned integer as a hexadecimal.
  * @suhp: Void pointer to an address in memory which holds an unsigned integer.
+ * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
 int print_short_hex(void *suhp, param params)
@@ -45,6 +46,7 @@ int print_short_hex(void *suhp, param params)
  * print_long_hex_u - Prints a long unsigned integer as a hexadecimal in
  * uppercase format.
  * @luhp: Void pointer to an address in memory which holds a long unsigned int.
+ * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
 int print_short_hex_u(void *suhp, param params)

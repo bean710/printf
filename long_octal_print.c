@@ -3,6 +3,7 @@
 /**
  * print_oct_long - prints an unsigned long int as an octal.
  * @luop: Void pointer to an address in memory holding an unsigned long int.
+ * @params: a structure containing info about the argument
  * Return: Number of characters printed.
  */
 int print_oct_long(void *luop, param params)

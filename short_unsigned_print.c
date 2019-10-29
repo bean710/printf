@@ -4,6 +4,7 @@
  * print_unsig_short - Prints an unsigned short integer in base 10.
  * @suip: Void opinter to an address in memory which holds an unsigned short
  * integer.
+ * @params: a structure containing info about the argument
  * Return: The number of characters printed.
  */
 int print_unsig_short(void *suip, param params)
