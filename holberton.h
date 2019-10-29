@@ -49,14 +49,14 @@ int setspecifier(const char *string, param *p, spec *specs);
 int isdig(char c);
 int get_full(const char *string, spec *specs, param *);
 
-int print_decimal(void *);
-int print_string(void *);
-int print_char(void *);
-int print_hex(void *);
-int print_hex_u(void *);
-int print_oct(void *);
-int print_unsig(void *);
-int print_special(void *);
+int print_decimal(void *, param);
+int print_string(void *, param);
+int print_char(void *, param);
+int print_hex(void *, param);
+int print_hex_u(void *, param);
+int print_oct(void *), param;
+int print_unsig(void *, param);
+int print_special(void *, param);
 
 void *get_mem(spec, va_list *);
 int loop_specifiers(va_list *, unsigned int, char, spec *, int *, int *);

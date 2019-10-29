@@ -5,7 +5,7 @@
  * @sp: void pointer to a string
  * Return: The number of characters printed.
  */
-int print_string(void *sp)
+int print_string(void *sp, param params)
 {
 	char *s = *(char **)sp;
 	int i = 0;

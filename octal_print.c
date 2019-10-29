@@ -6,7 +6,7 @@
  *
  * Return: Number of characters printed
  */
-int print_oct(void *uop)
+int print_oct(void *uop, param params)
 {
 	unsigned int oct = *(unsigned int *)uop;
 

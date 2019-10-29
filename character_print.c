@@ -6,7 +6,7 @@
  *
  * Return: Number of characters printed (Always 1)
  */
-int print_char(void *cp)
+int print_char(void *cp, param params)
 {
 	int c = *(int *)cp;
 

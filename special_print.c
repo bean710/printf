@@ -8,7 +8,7 @@
  *
  * Return: Number of characters printed
  */
-int print_special(void *ssp)
+int print_special(void *ssp, param params)
 {
 	unsigned char *s = *(unsigned char **)ssp;
 	char *hex = "0123456789ABCDEF";

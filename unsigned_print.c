@@ -6,7 +6,7 @@
  *
  * Return: The number of characters printed
  */
-int print_unsig(void *uip)
+int print_unsig(void *uip, param params)
 {
 	unsigned int i = *(unsigned int *)uip;
 

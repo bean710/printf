@@ -28,7 +28,7 @@ int base_converter(unsigned int i, unsigned int base, char *set)
  *
  * Return: The number of characters printed
  */
-int print_hex(void *uhp)
+int print_hex(void *uhp, param params)
 {
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789abcdef";
@@ -43,7 +43,7 @@ int print_hex(void *uhp)
  *
  * Return: The number of characters printed
  */
-int print_hex_u(void *uhp)
+int print_hex_u(void *uhp, param params)
 {
 	unsigned int hex = *(unsigned int *)uhp;
 	char *set = "0123456789ABCDEF";
