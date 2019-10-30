@@ -14,8 +14,7 @@ int _printf(const char *string, ...)
 	unsigned int i;
 	va_list *valist;
 	spec *specs;
-	param params;
-	param zeros = {0, 0, 0, 0, 0, 0, 0, NULL};
+	param params, zeros = {0, 0, 0, 0, 0, 0, 0, NULL};
 	int count = 0, flag = 0, arg_description_len;
 	void *vp;
 
@@ -44,11 +43,9 @@ int _printf(const char *string, ...)
 			}
 			vp = get_mem(*(params.specifier), valist);
 			count += params.specifier->func(vp, params);
-
 			i += arg_description_len + 1;
 		}
-		if (flag == 0)
-			count += _putchar(string[i]);
+		count += (flag == 0 ? _putchar(string[i]) : 0);
 	}
 	free(specs), free(valist);
 	return (count);
@@ -57,7 +54,6 @@ int _printf(const char *string, ...)
 /**
  * get_specs - Gives a pointer to allocated space containing all predefined
  * spec structs
- * @i: Pointer to an unsigned int which will be iterated based on how many
  * spec strucs will be returnes
  *
  * Return: Pointer to the first element in an array of `spec`s
@@ -152,6 +148,5 @@ void *get_mem(spec s, va_list *valist)
 			*(unsigned long int *)vp = va_arg(*valist, unsigned long int);
 			return (vp);
 	}
-
 	return (NULL);
 }
