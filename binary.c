@@ -11,6 +11,7 @@ int print_binary(void *ip, param params)
 	unsigned int n = *(unsigned int *)ip;
 	unsigned int i;
 	int count = 0;
+	(void)(params);
 
 	if (n == 0)
 	{
