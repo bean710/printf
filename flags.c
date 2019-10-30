@@ -104,6 +104,13 @@ int setprecision(const char *string, param *p)
 	return (offset);
 }
 
+/**
+ * setspecifier - Sets the specifier portion of the pointed to param
+ * @string: Pointer to the first character to check for specifier
+ * @p: Pointer to the param to modify
+ *
+ * Return: Number of specifier chars found (to skip)
+ */
 int setspecifier(const char *string, param *p, spec *specs)
 {
 	int offset = 0;
