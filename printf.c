@@ -43,6 +43,7 @@ int _printf(const char *string, ...)
 			vp = get_mem(*(params.specifier), valist);
 			count += params.specifier->func(vp, params);
 			i += arg_description_len + 1;
+			free(vp);
 		}
 		count += (string[i] ? _putchar(string[i]) : 0);
 	}
