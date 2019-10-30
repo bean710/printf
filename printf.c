@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 
@@ -25,7 +24,6 @@ int _printf(const char *string, ...)
 	va_start(*valist, string);
 	for (i = 0, params = zeros; string[i]; i++, params = zeros)
 	{
-		printf("%d\n", params.plus);
 		if (string[i] == '%')
 		{
 			if (string[i + 1] == '\0')
