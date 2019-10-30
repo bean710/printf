@@ -10,6 +10,7 @@ int print_string(void *sp, param params)
 {
 	char *s = *(char **)sp;
 	int i = 0;
+	(void)(params);
 
 	if (s == NULL)
 	{

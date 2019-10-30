@@ -9,6 +9,7 @@
 int print_unsig(void *uip, param params)
 {
 	unsigned int i = *(unsigned int *)uip;
+	(void)(params);
 
 	return (base_converter(i, 10, "0123456789"));
 }
