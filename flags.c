@@ -108,6 +108,8 @@ int setprecision(const char *string, param *p)
  * setspecifier - Sets the specifier portion of the pointed to param
  * @string: Pointer to the first character to check for specifier
  * @p: Pointer to the param to modify
+ * @specs: Pointer to the first item in an array of specifiers to compare
+ * against
  *
  * Return: Number of specifier chars found (to skip)
  */
