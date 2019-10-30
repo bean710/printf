@@ -72,17 +72,17 @@ spec *get_specs(unsigned int *i)
 		{"d", print_decimal, 'i'},
 		{"s", print_string, 's'},
 		{"c", print_char, 'i'},
-		{"x", print_hex, 'u'},
-		{"X", print_hex_u, 'u'},
-		{"o", print_oct, 'u'},
-		{"u", print_unsig, 'u'},
-		{"b", print_binary, 'u'},
+		{"x", print_hex, 'I'},
+		{"X", print_hex_u, 'I'},
+		{"o", print_oct, 'I'},
+		{"u", print_unsig, 'I'},
+		{"b", print_binary, 'I'},
 		{"r", print_reverse, 's'},
 		{"S", print_special, 's'},
 		{"R", print_rot, 's'},
 		{"li", print_long_decimal, 'l'},
 		{"ld", print_long_decimal, 'l'},
-		{"ul", print_unsigned_long_decimal, 'L'},
+		{"lu", print_unsigned_long_decimal, 'L'},
 		{"lx", print_long_hex, 'L'},
 		{"lX", print_long_hex_u, 'L'},
 		{"lo", print_oct_long, 'L'},
@@ -97,7 +97,7 @@ spec *get_specs(unsigned int *i)
 
 	ret_spec = malloc(sizeof(spec) * (*i));
 	if (ret_spec == NULL)
-		return (NULL);
+		return (-1);
 
 	for (j = 0; j < *i; j++)
 		ret_spec[j] = specs[j];
