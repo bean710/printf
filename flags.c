@@ -132,6 +132,12 @@ int setspecifier(const char *string, param *p, spec *specs)
 	return (-1);
 }
 
+/**
+ * isdig - Checks if character is a digit
+ * @c: The character to check
+ *
+ * Return: 1 if digit, 0 if not
+ */
 int isdig(char c)
 {
 	int i;
