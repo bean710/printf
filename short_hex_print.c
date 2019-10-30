@@ -33,7 +33,7 @@ int print_short_hex(void *suhp, param params)
 	char *set = "0123456789abcdef";
 	int count = 0;
 
-	if (params.pound)
+	if (params.pound && hex != 0)
 	{
 		count += _putchar('0');
 		count += _putchar('x');
@@ -55,7 +55,7 @@ int print_short_hex_u(void *suhp, param params)
 	char *set = "0123456789abcdef";
 	int count = 0;
 
-	if (params.pound)
+	if (params.pound && hex != 0)
 	{
 		count += _putchar('0');
 		count += _putchar('X');
