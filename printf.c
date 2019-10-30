@@ -27,7 +27,7 @@ int _printf(const char *string, ...)
 		if (string[i] == '%')
 		{
 			if (string[i + 1] == '\0')
-				return (-1);
+				return (end(specs, valist));
 			if (string[i + 1] == '%')
 			{
 				count += _putchar('%');
@@ -48,7 +48,23 @@ int _printf(const char *string, ...)
 		}
 		count += (string[i] ? _putchar(string[i]) : 0);
 	}
-	free(specs), free(valist);
+	end(specs, valist);
 	return (count);
 }
 
+/**
+ * end - Cleans up loose ends
+ * @specs: Pointer to the specs variable
+ * @valist: Pointer to the valist variable
+ *
+ * Return: -1
+ */
+int end(spec *specs, va_list *valist)
+{
+	free(specs);
+	free(valist);
+
+	_putchar(-1);
+
+	return (-1);
+}
