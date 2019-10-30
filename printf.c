@@ -97,7 +97,7 @@ spec *get_specs(unsigned int *i)
 
 	ret_spec = malloc(sizeof(spec) * (*i));
 	if (ret_spec == NULL)
-		return (-1);
+		return (NULL);
 
 	for (j = 0; j < *i; j++)
 		ret_spec[j] = specs[j];
