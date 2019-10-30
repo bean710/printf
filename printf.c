@@ -15,7 +15,7 @@ int _printf(const char *string, ...)
 	va_list *valist;
 	spec *specs;
 	param params, zeros = {0, 0, 0, 0, 0, 0, 0, NULL};
-	int count = 0, flag = 0, arg_description_len;
+	int count = 0, arg_description_len;
 	void *vp;
 
 	valist = malloc(sizeof(va_list));
@@ -24,7 +24,7 @@ int _printf(const char *string, ...)
 				&& string[1] == '\0'))
 		return (-1);
 	va_start(*valist, string);
-	for (i = 0; string[i]; i++, flag = 0)
+	for (i = 0; string[i]; i++)
 	{
 		if (string[i] == '%')
 		{
@@ -32,7 +32,7 @@ int _printf(const char *string, ...)
 			{
 				count += _putchar('%');
 				i++;
-				flag = 1;
+				continue;
 			}
 			params = zeros;
 			arg_description_len = get_full(string + i + 1, specs, &params);
@@ -45,7 +45,7 @@ int _printf(const char *string, ...)
 			count += params.specifier->func(vp, params);
 			i += arg_description_len + 1;
 		}
-		count += (flag == 0 ? _putchar(string[i]) : 0);
+		count += (string[i] ? _putchar(string[i]) : 0);
 	}
 	free(specs), free(valist);
 	return (count);
