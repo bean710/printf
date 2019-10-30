@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <stddef.h>
 
+/**
+ * setflags - Sets the flags portion of the pointed to param
+ * @string: Pointer to the first character to check for flags
+ * @p: Pointer to the param to modify
+ *
+ * Return: Number of flag chars found (to skip)
+ */
 int setflags(const char *string, param *p)
 {
 	unsigned int i, offset = 0;
@@ -41,6 +48,13 @@ int setflags(const char *string, param *p)
 	return (offset);
 }
 
+/**
+ * setwidth - Sets the width portion of the pointed to param
+ * @string: Pointer to the first character to check for width
+ * @p: Pointer to the param to modify
+ *
+ * Return: Number of width chars found (to skip)
+ */
 int setwidth(const char *string, param *p)
 {
 	int i;
@@ -60,6 +74,13 @@ int setwidth(const char *string, param *p)
 	return (i);
 }
 
+/**
+ * setprecision - Sets the precision portion of the pointed to param
+ * @string: Pointer to the first character to check for precision
+ * @p: Pointer to the param to modify
+ *
+ * Return: Number of precision chars found (to skip)
+ */
 int setprecision(const char *string, param *p)
 {
 	int offset = 0;
