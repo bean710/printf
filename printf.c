@@ -17,11 +17,10 @@ int _printf(const char *string, ...)
 	param params;
 	param zeros = {0, 0, 0, 0, 0, 0, 0, NULL};
 	int count = 0, flag = 0, arg_description_len;
-	unsigned int specnum = 0;
 	void *vp;
 
 	valist = malloc(sizeof(va_list));
-	specs = get_specs(&specnum);
+	specs = get_specs();
 	if (string == NULL || valist == NULL || specs == NULL || (*string == '%'
 				&& string[1] == '\0'))
 		return (-1);
@@ -63,7 +62,7 @@ int _printf(const char *string, ...)
  *
  * Return: Pointer to the first element in an array of `spec`s
  */
-spec *get_specs(unsigned int *i)
+spec *get_specs(void)
 {
 	spec *ret_spec;
 	unsigned int j;
@@ -96,14 +95,10 @@ spec *get_specs(unsigned int *i)
 		{NULL, NULL, '\0'}
 	};
 
-	for (; specs[*i].spec_string != NULL; (*i)++)
-		;
-
-	ret_spec = malloc(sizeof(spec) * (*i));
+	ret_spec = malloc(sizeof(spec) * 26);
 	if (ret_spec == NULL)
 		return (NULL);
-
-	for (j = 0; j < *i; j++)
+	for (j = 0; j < 26; j++)
 		ret_spec[j] = specs[j];
 
 	return (ret_spec);
