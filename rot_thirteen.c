@@ -14,6 +14,7 @@ int print_rot(void *s, param params)
 	int count = 0, flag = 0;
 	char check[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	(void)(params);
 
 	if (arr == NULL)
 	{

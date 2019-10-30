@@ -14,6 +14,7 @@ int print_special(void *ssp, param params)
 	unsigned char *s = *(unsigned char **)ssp;
 	char *hex = "0123456789ABCDEF";
 	int count = 0;
+	(void)(params);
 
 	for (; *s; s++)
 	{
