@@ -3,7 +3,7 @@
 
 #include <stdarg.h>
 
-struct specifier;
+typedef struct specifier spec;
 /**
  * struct parameters - for storing printf argument descriptions
  * @plus: '+' flag
@@ -27,7 +27,7 @@ typedef struct parameters
 	int width;
 	int precision;
 
-	struct specifier *specifier;
+	spec *specifier;
 } param;
 
 /**
