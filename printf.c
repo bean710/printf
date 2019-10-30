@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 
@@ -42,8 +43,9 @@ int _printf(const char *string, ...)
 			}
 			vp = get_mem(*(params.specifier), valist);
 			count += params.specifier->func(vp, params);
-			i += arg_description_len + 1;
+			i += arg_description_len;
 			free(vp);
+			continue;
 		}
 		count += (string[i] ? _putchar(string[i]) : 0);
 	}
