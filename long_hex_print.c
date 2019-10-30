@@ -53,7 +53,7 @@ int print_long_hex(void *luhp, param params)
 int print_long_hex_u(void *luhp, param params)
 {
 	unsigned long int hex = *(unsigned long int *)luhp;
-	char *set = "0123456789abcdef";
+	char *set = "0123456789ABCDEF";
 	int count = 0;
 
 	if (params.pound && hex != 0)
