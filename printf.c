@@ -80,6 +80,7 @@ spec *get_specs(unsigned int *i)
 		{"r", print_reverse, 's'},
 		{"S", print_special, 's'},
 		{"R", print_rot, 's'},
+		{"p", print_ptr, 'L'},
 		{"li", print_long_decimal, 'l'},
 		{"ld", print_long_decimal, 'l'},
 		{"ul", print_unsigned_long_decimal, 'L'},
@@ -89,6 +90,9 @@ spec *get_specs(unsigned int *i)
 		{"hu", print_unsigned_short_decimal, 'i'},
 		{"hd", print_short_decimal, 'i'},
 		{"hi", print_short_decimal, 'i'},
+		{"ho", print_oct_short, 'i'},
+		{"hx", print_short_hex, 'i'},
+		{"hX", print_short_hex_u, 'i'},
 		{NULL, NULL, '\0'}
 	};
 
