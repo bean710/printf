@@ -9,6 +9,7 @@
 int print_char(void *cp, param params)
 {
 	int c = *(int *)cp;
+	(void)(params);
 
 	_putchar(c);
 	return (1);

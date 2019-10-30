@@ -10,6 +10,7 @@
 int print_unsig_long(void *luip, param params)
 {
 	unsigned long int i = *(unsigned int *)luip;
+	(void)(params);
 
 	return (long_base_converter(i, 10, "0123456789"));
 }

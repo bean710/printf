@@ -12,6 +12,7 @@ int print_reverse(void *s, param params)
 	char *arr = *(char **)s;
 	int i = 0;
 	int count = 0;
+	(void)(params);
 
 	if (arr == NULL)
 	{
