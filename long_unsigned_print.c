@@ -2,7 +2,7 @@
 
 /**
  * print_unsig_long - Prints an unsigned long integer
- * @uip: Void opinter to an address in memory which holds an unsigned long
+ * @luip: Void pointer to an address in memory which holds an unsigned long
  * integer.
  * @params: a structure containing info about the argument
  * Return: The number of characters printed.

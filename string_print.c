@@ -3,6 +3,7 @@
 /**
  * print_string - prints a string
  * @sp: void pointer to a string
+ * @params: A structure containing info about the argument description.
  * Return: The number of characters printed.
  */
 int print_string(void *sp, param params)
