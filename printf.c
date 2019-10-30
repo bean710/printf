@@ -11,11 +11,10 @@
  */
 int _printf(const char *string, ...)
 {
-	unsigned int i;
 	va_list *valist;
 	spec *specs;
 	param params, zeros = {0, 0, 0, 0, 0, 0, 0, NULL};
-	int count = 0, arg_description_len;
+	int i, count = 0, arg_description_len;
 	void *vp;
 
 	valist = malloc(sizeof(va_list));
@@ -24,17 +23,18 @@ int _printf(const char *string, ...)
 				&& string[1] == '\0'))
 		return (-1);
 	va_start(*valist, string);
-	for (i = 0; string[i]; i++)
+	for (i = 0; string[i]; i++, params = zeros)
 	{
 		if (string[i] == '%')
 		{
+			if (string[i + 1] == '\0')
+				return (-1);
 			if (string[i + 1] == '%')
 			{
 				count += _putchar('%');
 				i++;
 				continue;
 			}
-			params = zeros;
 			arg_description_len = get_full(string + i + 1, specs, &params);
 			if (arg_description_len < 0)
 			{
