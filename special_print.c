@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_special - Prints a string and prints non-printable characters as
@@ -16,6 +17,7 @@ int print_special(void *ssp, param params)
 
 	for (; *s; s++)
 	{
+		printf("\nChar: %c\n", *s);
 		if (*s >= 32 && *s < 127)
 		{
 			_putchar(*s);

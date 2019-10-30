@@ -117,38 +117,3 @@ int isdig(char c)
 
 	return (0);
 }
-
-int get_full(const char *string, spec *specs, param *res)
-{
-	int offset = 0;
-	int specifier;
-
-
-	/* printf("Getting params for: %s\n", string); */
-
-
-	offset = setflags(string, res);
-
-	/* printf("Got flags: %d, %d, %d, %d\n", res->plus, res->minus, */
-	/* res->zero, res->space); */
-
-	offset += setwidth(string + offset, res);
-
-	/* printf("Got width: %d\n", res->width); */
-	
-	offset += setprecision(string + offset, res);
-
-	/* printf("Got precision: %d\n", res->precision); */
-
-
-	specifier = setspecifier(string + offset, res, specs);
-	if (specifier == -1)
-		return (-1);
-
-	offset += specifier;
-
-	/* printf("Got specifier: %s\n", res->specifier->spec_string); */
-
-
-	return (offset);
-}
