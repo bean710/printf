@@ -40,12 +40,12 @@ typedef struct parameters
  * specifiers in spec_string, it's corresponding function pointer in func, and
  * the type of input the function takes in type.
  */
-typedef struct specifier
+struct specifier
 {
 	char *spec_string;
 	int (*func)(void *, param);
 	char type;
-} spec;
+};
 
 spec *get_specs(void);
 void print_number(int n);
