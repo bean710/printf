@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- * print_decimal - prints an int
- * @ip: Pointer to an int
+ * print_short_decimal - prints a short int
+ * @ip: Void pointer to an int
  * @params: a structure containing info about the argument
  * Return: the number of chars printed.
  */
@@ -23,7 +23,7 @@ int print_short_decimal(void *ip, param params)
 }
 
 /**
- * print_number - prints a number
+ * print_short_number - prints a number
  * @n: number to print
  */
 void print_short_number(short int n)
@@ -44,7 +44,7 @@ void print_short_number(short int n)
 }
 
 /**
- * _pow - Calculates exponents
+ * _pow_short - Calculates exponents
  * @a: base
  * @b: exponent
  *
@@ -67,7 +67,7 @@ short int _pow_short(short int a, short int b)
 }
 
 /**
- * getnum - gets the 'index'th digit of num, starting from the left at 0
+ * getnum_short - gets the 'index'th digit of num, starting from the left at 0
  * @num: the number to extract digit from
  * @index: the index of the desired digit with 0 being the leftmost digit
  *
@@ -83,7 +83,7 @@ int getnum_short(short int num, short int index)
 }
 
 /**
- * getlen - gets the length of the number num
+ * getlen_short - gets the length of the number num
  * @num: the number to get length of
  *
  * Return: length of number 'num'
