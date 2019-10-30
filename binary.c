@@ -3,13 +3,15 @@
 /**
  * print_binary - Prints an unsigned number in binary.
  * @ip: A pointer to an unsigned int
+ * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_binary(void *ip)
+int print_binary(void *ip, param params)
 {
 	unsigned int n = *(unsigned int *)ip;
 	unsigned int i;
 	int count = 0;
+	(void)(params);
 
 	if (n == 0)
 	{

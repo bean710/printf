@@ -4,15 +4,17 @@
 /**
  * print_rot - prints a string in ROT13 format.
  * @s: pointer to a string
+ * @params: a structure containing info about the argument
  * Return: The number of characters printed.
  */
-int print_rot(void *s)
+int print_rot(void *s, param params)
 {
 	int i, j;
 	char *arr = *(char **)s;
 	int count = 0, flag = 0;
 	char check[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	(void)(params);
 
 	if (arr == NULL)
 	{
