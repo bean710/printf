@@ -90,7 +90,7 @@ int print_oct_long(void *, param);
 int print_long_decimal(void *ip, param p);
 void print_long_number(long int n);
 long int _pow_long(int a, int b);
-int getnum_long(long int num, long int index);
+long int getnum_long(long int num, long int index);
 long int getlen_long(long int num);
 
 int print_unsigned_long_decimal(void *ulivp, param params);
@@ -105,7 +105,7 @@ int print_unsig_short(void *, param);
 int print_short_decimal(void *ip, param p);
 void print_short_number(short int n);
 short int _pow_short(short int a, short int b);
-int getnum_short(short int num, short int index);
+short int getnum_short(short int num, short int index);
 short int getlen_short(short int num);
 
 int print_unsigned_short_decimal(void *usivp, param params);

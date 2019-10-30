@@ -14,7 +14,7 @@ int print_short_decimal(void *ip, param params)
 
 	if (params.plus && decimal > -1)
 		count += _putchar('+');
-	if (params.space && decimal > -1)
+	else if (params.space && decimal > -1)
 		count += _putchar(' ');
 
 	print_short_number(decimal);
@@ -73,7 +73,7 @@ short int _pow_short(short int a, short int b)
  *
  * Return: The 'index'th digit of num
  */
-int getnum_short(short int num, short int index)
+short int getnum_short(short int num, short int index)
 {
 	short int l;
 
