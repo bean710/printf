@@ -140,14 +140,5 @@ int setspecifier(const char *string, param *p, spec *specs)
  */
 int isdig(char c)
 {
-	int i;
-	char digs[11] = "0123456789";
-
-	for (i = 0; digs[i]; i++)
-	{
-		if (c == digs[i])
-			return (1);
-	}
-
-	return (0);
+	return ((c >= '0' && c <= '9') ? 1 : 0);
 }
