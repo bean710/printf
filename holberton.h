@@ -53,6 +53,7 @@ int _pow(int a, int b);
 int getnum(int num, int index);
 int getlen(int num);
 int base_converter(unsigned int, unsigned int, char *);
+int end(spec *specs, va_list *valist);
 
 int setflags(const char *string, param *p);
 int setwidth(const char *string, param *p);

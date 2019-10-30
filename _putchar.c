@@ -9,5 +9,19 @@
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	static char buffer[1024];
+	static int current;
+
+	if (current >= 1024 || c == -1)
+	{
+		write(1, &buffer, current);
+		current = 0;
+	}
+	else
+	{
+		buffer[current] = c;
+		current++;
+	}
+
+	return (1);
 }
