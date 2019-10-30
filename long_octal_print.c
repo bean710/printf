@@ -11,7 +11,7 @@ int print_oct_long(void *luop, param params)
 	unsigned long int oct = *(unsigned long int *)luop;
 	int count = 0;
 
-	if (params.pound)
+	if (params.pound && oct != 0)
 	{
 		count += _putchar('0');
 	}
