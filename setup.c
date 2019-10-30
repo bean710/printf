@@ -93,10 +93,10 @@ void *get_mem(spec s, va_list *valist)
 			return (vp);
 
 		case 'L':
-			vp = malloc(sizeof(unsigned long int));
+			vp = malloc(sizeof(unsigned long));
 			if (vp == NULL)
 				return (NULL);
-			*(unsigned long int *)vp = va_arg(*valist, unsigned long int);
+			*(unsigned long *)vp = va_arg(*valist, unsigned long);
 			return (vp);
 	}
 	return (NULL);
