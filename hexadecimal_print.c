@@ -34,7 +34,7 @@ int print_hex(void *uhp, param params)
 	char *set = "0123456789abcdef";
 	int count = 0;
 
-	if (params.pound)
+	if (params.pound && hex != 0)
 	{
 		_putchar('0');
 		_putchar('x');
@@ -57,7 +57,7 @@ int print_hex_u(void *uhp, param params)
 	char *set = "0123456789ABCDEF";
 	int count = 0;
 
-	if (params.pound)
+	if (params.pound && hex != 0)
 	{
 		_putchar('0');
 		_putchar('X');
