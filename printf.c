@@ -23,8 +23,9 @@ int _printf(const char *string, ...)
 				&& string[1] == '\0'))
 		return (-1);
 	va_start(*valist, string);
-	for (i = 0; string[i]; i++, params = zeros)
+	for (i = 0, params = zeros; string[i]; i++, params = zeros)
 	{
+		printf("%d\n", params.plus);
 		if (string[i] == '%')
 		{
 			if (string[i + 1] == '\0')
