@@ -48,6 +48,29 @@ All that needs be done is to prefix your int type (d, i, o, u, x, X) with:
 .PP
 \fBh\fR      For short types.
 .PP
+.SS Flag Characters
+Each of these flags will define a way that \fB_printf\fR() prints.
+.PP
+\fB+\fR      Always print '+' in front of positive integers.
+.br
+       Works with signed ints only.
+.PP
+\fB(space)\fR Adds an invisible '+' sign in front of positive numbers.
+.br
+       Works with signed ints only.
+.br
+       NOTE: if both + and (space) are used, \fB_printf\fR will ignore the
+.br	
+       (space) and print +.
+.PP
+\fB#\fR      Prefixes octals and hexes with their appropriate prefix.
+.br
+       Prefixes:
+.br
+       OCTAL: '0'
+.br
+       HEX: '0x' or '0X' respectively.
+.PP	    
 .SH AUTHORS
 Ben Keener and Travis Bearden
 
