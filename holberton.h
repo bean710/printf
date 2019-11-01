@@ -61,7 +61,6 @@ int setspecifier(const char *string, param *p, spec *specs);
 int isdig(char c);
 int get_full(const char *string, spec *specs, param *);
 
-va_list*get_mem(spec, va_list);
 int _putchar(char);
 int _printf(const char *, ...);
 int print_binary(va_list, param);
