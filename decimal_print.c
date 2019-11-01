@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_decimal - prints an int
@@ -8,8 +9,21 @@
  */
 int print_decimal(va_list valist, param params)
 {
-	int decimal = va_arg(valist, int);
-	int count = 0;
+	int decimal;
+	int count = 0, i;
+
+	if (params.width == -1)
+		params.width = va_arg(valist, int);
+	if (params.precision == -1)
+		params.precision = va_arg(valist, int);
+
+	decimal = va_arg(valist, int);
+	if (params.width && !params.minus)
+	{
+		for (i = 0; i < params.width - getlen(decimal) - ((params.plus ||
+						params.space) ? 1 : 0); i++)
+			count += _putchar(params.zero ? '0' : ' ');
+	}
 
 	if (params.plus && decimal > -1)
 		count += _putchar('+');
@@ -17,6 +31,13 @@ int print_decimal(va_list valist, param params)
 		count += _putchar(' ');
 
 	print_number(decimal);
+
+	if (params.width && params.minus)
+	{
+		for (i = 0; i < params.width - getlen(decimal) - ((params.plus ||
+						params.space) ? 1 : 0); i++)
+			count += _putchar(params.zero ? '0' : ' ');
+	}
 
 	return (getlen(decimal) + count + (decimal < 0 ? 1 : 0));
 }

@@ -7,9 +7,9 @@
  * @params: a structure containing info about the argument
  * Return: The number of characters printed.
  */
-int print_unsig_long(void *luip, param params)
+int print_unsig_long(va_list valist, param params)
 {
-	unsigned long int i = *(unsigned int *)luip;
+	unsigned long int i = va_arg(valist, unsigned long int);
 	(void)(params);
 
 	return (long_base_converter(i, 10, "0123456789"));

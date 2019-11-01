@@ -10,18 +10,17 @@
  */
 int _printf(const char *string, ...)
 {
-	va_list *valist;
+	va_list valist;
 	spec *specs;
 	param params, zeros = {0, 0, 0, 0, 0, 0, 0, NULL};
 	int i, count = 0, arg_description_len;
 	void *vp;
 
-	valist = malloc(sizeof(va_list));
 	specs = get_specs();
-	if (string == NULL || valist == NULL || specs == NULL || (*string == '%'
+	if (string == NULL || specs == NULL || (*string == '%'
 				&& string[1] == '\0'))
 		return (-1);
-	va_start(*valist, string);
+	va_start(valist, string);
 	for (i = 0, params = zeros; string[i]; i++, params = zeros)
 	{
 		if (string[i] == '%')
@@ -40,15 +39,14 @@ int _printf(const char *string, ...)
 				count += _putchar('%');
 				continue;
 			}
-			vp = get_mem(*(params.specifier), valist);
-			count += params.specifier->func(vp, params);
+			count += params.specifier->func(valist, params);
 			i += arg_description_len;
-			free(vp);
 			continue;
 		}
 		count += (string[i] ? _putchar(string[i]) : 0);
 	}
-	free(specs), free(valist);
+	va_end(valist);
+	free(specs);
 	return (count);
 }
 

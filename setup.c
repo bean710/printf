@@ -52,57 +52,6 @@ spec *get_specs(void)
 }
 
 /**
- * get_mem - returns a malloc'd void pointer
- * @s: struct
- * @valist: pointer of type va_list
- *
- * Return: void pointer
- */
-void *get_mem(spec s, va_list *valist)
-{
-	void *vp;
-
-	switch (s.type)
-	{
-		case 'i':
-			vp = malloc(sizeof(int));
-			if (vp == NULL)
-				return (NULL);
-			*(int *)vp = va_arg(*valist, int);
-			return (vp);
-
-		case 's':
-			vp = malloc(sizeof(char *));
-			if (vp == NULL)
-				return (NULL);
-			*(char **)vp = va_arg(*valist, char *);
-			return (vp);
-
-		case 'I':
-			vp = malloc(sizeof(unsigned int));
-			if (vp == NULL)
-				return (NULL);
-			*(unsigned int *)vp = va_arg(*valist, unsigned int);
-			return (vp);
-
-		case 'l':
-			vp = malloc(sizeof(long int));
-			if (vp == NULL)
-				return (NULL);
-			*(long int *)vp = va_arg(*valist, long int);
-			return (vp);
-
-		case 'L':
-			vp = malloc(sizeof(unsigned long int));
-			if (vp == NULL)
-				return (NULL);
-			*(unsigned long int *)vp = va_arg(*valist, unsigned long int);
-			return (vp);
-	}
-	return (NULL);
-}
-
-/**
  * get_full - Gets the full set of flags, witdth, precision, and the
  * specifier (Using functions in flags.c
  * @string: Pointer to the first character to check for flags, width, etc.
