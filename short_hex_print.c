@@ -27,9 +27,9 @@ int short_base_conv(unsigned short int i, unsigned short int base, char *set)
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_short_hex(void *suhp, param params)
+int print_short_hex(va_list valist, param params)
 {
-	unsigned short int hex = *(unsigned short int *)suhp;
+	unsigned short int hex = va_arg(valist, int);
 	char *set = "0123456789abcdef";
 	int count = 0;
 
@@ -49,9 +49,9 @@ int print_short_hex(void *suhp, param params)
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_short_hex_u(void *suhp, param params)
+int print_short_hex_u(va_list valist, param params)
 {
-	unsigned short int hex = *(unsigned short int *)suhp;
+	unsigned short int hex = va_arg(valist, int);
 	char *set = "0123456789abcdef";
 	int count = 0;
 

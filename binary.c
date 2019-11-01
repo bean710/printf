@@ -6,9 +6,9 @@
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_binary(void *ip, param params)
+int print_binary(va_list valist, param params)
 {
-	unsigned int n = *(unsigned int *)ip;
+	unsigned int n = va_arg(valist, unsigned int);
 	unsigned int i;
 	int count = 0;
 	(void)(params);

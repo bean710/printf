@@ -6,9 +6,9 @@
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_unsigned_long_decimal(void *ulivp, param params)
+int print_unsigned_long_decimal(va_list valist, param params)
 {
-	int uli = *(unsigned long int *)ulivp;
+	unsigned long int uli = va_arg(valist, unsigned long int);
 	int count = 0;
 	(void)(params);
 

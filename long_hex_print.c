@@ -27,9 +27,9 @@ int long_base_converter(unsigned long int i, unsigned long int base, char *set)
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_long_hex(void *luhp, param params)
+int print_long_hex(va_list valist, param params)
 {
-	unsigned long int hex = *(unsigned long int *)luhp;
+	unsigned long int hex = va_arg(valist, unsigned long int);
 	char *set = "0123456789abcdef";
 	int count = 0;
 
@@ -50,9 +50,9 @@ int print_long_hex(void *luhp, param params)
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_long_hex_u(void *luhp, param params)
+int print_long_hex_u(va_list valist, param params)
 {
-	unsigned long int hex = *(unsigned long int *)luhp;
+	unsigned long int hex = va_arg(valist, unsigned long int);
 	char *set = "0123456789ABCDEF";
 	int count = 0;
 

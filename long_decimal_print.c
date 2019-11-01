@@ -7,9 +7,9 @@
  * @params: a structure containing info about the argument
  * Return: the number of chars printed.
  */
-int print_long_decimal(void *ip, param params)
+int print_long_decimal(va_list valist, param params)
 {
-	long int decimal = *(long int *)ip;
+	long int decimal = va_arg(valist, long int);
 	int count = 0;
 
 	if (params.plus && decimal > -1)

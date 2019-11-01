@@ -28,9 +28,9 @@ int base_converter(unsigned int i, unsigned int base, char *set)
  * @params: a structure containing info about the argument
  * Return: The number of characters printed
  */
-int print_hex(void *uhp, param params)
+int print_hex(va_list valist, param params)
 {
-	unsigned int hex = *(unsigned int *)uhp;
+	unsigned int hex = va_arg(valist, unsigned int);
 	char *set = "0123456789abcdef";
 	int count = 0;
 
@@ -51,9 +51,9 @@ int print_hex(void *uhp, param params)
  * @params: a structure containing info about the argument
  * Return: The number of characters printed
  */
-int print_hex_u(void *uhp, param params)
+int print_hex_u(va_list valist, param params)
 {
-	unsigned int hex = *(unsigned int *)uhp;
+	unsigned int hex = va_arg(valist, unsigned int);
 	char *set = "0123456789ABCDEF";
 	int count = 0;
 

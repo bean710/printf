@@ -7,10 +7,10 @@
  * @params: a structure containing info about the argument
  * Return: The number of characters printed.
  */
-int print_rot(void *s, param params)
+int print_rot(va_list valist, param params)
 {
 	int i, j;
-	char *arr = *(char **)s;
+	char *arr = va_arg(valist, char*);
 	int count = 0, flag = 0;
 	char check[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";

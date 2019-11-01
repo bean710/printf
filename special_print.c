@@ -8,9 +8,9 @@
  * @params: a structure containing info about the argument
  * Return: Number of characters printed
  */
-int print_special(void *ssp, param params)
+int print_special(va_list valist, param params)
 {
-	unsigned char *s = *(unsigned char **)ssp;
+	unsigned char *s = va_arg(valist, int);
 	char *hex = "0123456789ABCDEF";
 	int count = 0;
 	(void)(params);

@@ -7,9 +7,9 @@
  * @params: a structure containing info about the argument
  * Return: the number of characters
  */
-int print_reverse(void *s, param params)
+int print_reverse(va_list valist, param params)
 {
-	char *arr = *(char **)s;
+	char *arr = va_arg(valist, char *);
 	int i = 0;
 	int count = 0;
 	(void)(params);

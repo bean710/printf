@@ -6,9 +6,9 @@
  * @params: a structure containing info about the argument
  * Return: The number of characters printed
  */
-int print_unsig(void *uip, param params)
+int print_unsig(va_list valist, param params)
 {
-	unsigned int i = *(unsigned int *)uip;
+	unsigned int i = va_arg(valist, unsigned int);
 	(void)(params);
 
 	return (base_converter(i, 10, "0123456789"));

@@ -6,10 +6,10 @@
  * @params: a structure containing info about the argument
  * Return: the number of characters printed.
  */
-int print_ptr(void *p, param params)
+int print_ptr(va_list valist, param params)
 {
 	char *set = "0123456789abcdef";
-	unsigned long int ptr_ul = *(unsigned long int *)p;
+	unsigned long int ptr_ul = va_arg(valist, unsigned long int);
 	int count = 0;
 
 	if (params.plus)

@@ -43,7 +43,7 @@ typedef struct parameters
 struct specifier
 {
 	char *spec_string;
-	int (*func)(void *, param);
+	int (*func)(va_list, param);
 	char type;
 };
 
@@ -61,53 +61,52 @@ int setspecifier(const char *string, param *p, spec *specs);
 int isdig(char c);
 int get_full(const char *string, spec *specs, param *);
 
-void *get_mem(spec, va_list *);
-int loop_specifiers(va_list *, unsigned int, char, spec *, int *, int *);
+va_list*get_mem(spec, va_list);
 int _putchar(char);
 int _printf(const char *, ...);
-int print_binary(void *, param);
+int print_binary(va_list, param);
 unsigned int u_pow(unsigned int, unsigned int);
-int print_reverse(void *, param);
-int print_rot(void *, param);
+int print_reverse(va_list, param);
+int print_rot(va_list, param);
 
-int print_decimal(void *, param);
-int print_string(void *, param);
-int print_char(void *, param);
-int print_hex(void *, param);
-int print_hex_u(void *, param);
-int print_oct(void *, param);
-int print_unsig(void *, param);
-int print_special(void *, param);
+int print_decimal(va_list, param);
+int print_string(va_list, param);
+int print_char(va_list, param);
+int print_hex(va_list, param);
+int print_hex_u(va_list, param);
+int print_oct(va_list, param);
+int print_unsig(va_list, param);
+int print_special(va_list, param);
 
 /* long number functions */
 int long_base_converter(unsigned long int, unsigned long int, char *);
-int print_long_hex(void *, param);
-int print_long_hex_u(void *, param);
-int print_unsig_long(void *, param);
-int print_ptr(void *, param);
-int print_oct_long(void *, param);
+int print_long_hex(va_list, param);
+int print_long_hex_u(va_list, param);
+int print_unsig_long(va_list, param);
+int print_ptr(va_list, param);
+int print_oct_long(va_list, param);
 
-int print_long_decimal(void *ip, param p);
+int print_long_decimal(va_list, param p);
 void print_long_number(long int n);
 long int _pow_long(int a, int b);
 int getnum_long(long int num, long int index);
 long int getlen_long(long int num);
 
-int print_unsigned_long_decimal(void *ulivp, param params);
+int print_unsigned_long_decimal(va_list, param params);
 
 /* short number functions */
 int short_base_conv(unsigned short int, unsigned short int, char *);
-int print_short_hex(void *, param);
-int print_short_hex_u(void *, param);
-int print_oct_short(void *, param);
-int print_unsig_short(void *, param);
+int print_short_hex(va_list, param);
+int print_short_hex_u(va_list, param);
+int print_oct_short(va_list, param);
+int print_unsig_short(va_list, param);
 
-int print_short_decimal(void *ip, param p);
+int print_short_decimal(va_list, param p);
 void print_short_number(short int n);
 short int _pow_short(short int a, short int b);
 int getnum_short(short int num, short int index);
 short int getlen_short(short int num);
 
-int print_unsigned_short_decimal(void *usivp, param params);
+int print_unsigned_short_decimal(va_list, param params);
 
 #endif

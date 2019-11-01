@@ -7,9 +7,9 @@
  * @params: a structure containing info about the argument
  * Return: The number of characters printed.
  */
-int print_unsig_short(void *suip, param params)
+int print_unsig_short(va_list valist, param params)
 {
-	unsigned short int i = *(unsigned short int *)suip;
+	unsigned short int i = va_arg(valist, int);
 	(void)(params);
 
 	return (short_base_conv(i, 10, "0123456789"));

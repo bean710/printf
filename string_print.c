@@ -6,9 +6,9 @@
  * @params: A structure containing info about the argument description.
  * Return: The number of characters printed.
  */
-int print_string(void *sp, param params)
+int print_string(va_list valist, param params)
 {
-	char *s = *(char **)sp;
+	char *s = va_arg(valist, char *);
 	int i = 0;
 	(void)(params);
 

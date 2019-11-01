@@ -6,9 +6,9 @@
  * @params: a structure containing info about the argument
  * Return: Number of characters printed.
  */
-int print_oct_long(void *luop, param params)
+int print_oct_long(va_list valist, param params)
 {
-	unsigned long int oct = *(unsigned long int *)luop;
+	unsigned long int oct = va_arg(valist, unsigned long int);
 	int count = 0;
 
 	if (params.pound && oct != 0)
