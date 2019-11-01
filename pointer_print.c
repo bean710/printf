@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stddef.h>
 
 /**
  * print_ptr - Prints the address held by a pointer in hexadecimal.
@@ -11,6 +12,16 @@ int print_ptr(va_list valist, param params)
 	char *set = "0123456789abcdef";
 	unsigned long int ptr_ul = va_arg(valist, unsigned long int);
 	int count = 0;
+
+	if (ptr_ul == 0)
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('i');
+		_putchar('l');
+		_putchar(')');
+		return (5);
+	}
 
 	if (params.plus)
 		count += _putchar('+');

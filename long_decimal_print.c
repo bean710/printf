@@ -73,7 +73,7 @@ long int _pow_long(int a, int b)
  *
  * Return: The 'index'th digit of num
  */
-int getnum_long(long int num, long int index)
+long int getnum_long(long int num, long int index)
 {
 	long int l;
 

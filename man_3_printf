@@ -6,17 +6,18 @@ _printf - format and print data to standard output.
 .PP
 \fBint _printf(const char *\fR\fIformat\fR\fB, ...);\fR
 .SH DESCRIPTION
-The \fB_printf()\fR function prints to standard output according to a
+The \fB_printf\fR() function prints to standard output according to a
 \fIformat\fR as described below.
 .SS Return Value
-The \fB_printf()\fR function returns the number of characters it has printed.
+The \fB_printf\fR() function returns the number of characters it has printed.
 .SS Format of the format string
 The format string is a character string, and must be the first argument
-passed to the \fB_printf\fR function.
+passed to the \fB_printf\fR() function.
 It will print ordinary characters (not %) without changing them to standard output.
 It will also print a variety of data, passed as additional arguments after the format string.
 .SS Conversion Specifiers
-These characters will tell \fB_printf()\fR what type of conversion is needed.
+These characters will tell \fB_printf\fR() what type of conversion is needed.
+.br
 Here are their meanings:
 .PP
 \fBd, i\fR   This specifier will print an argument of type INT.
@@ -38,7 +39,38 @@ Here are their meanings:
 \fBR\fR      This specifier will print a CHAR * in ROT13 format.
 .PP
 \fBS\fR      This specifier will print a string, including the special char.
+.SS Long and Short Integers
+For each argument type that is an integer, \fB_printf\fR() will print them.
+If the integers are long or short, you must specify that.
+All that needs be done is to prefix your int type (d, i, o, u, x, X) with:
 .PP
+\fBl\fR      For long types.
+.PP
+\fBh\fR      For short types.
+.PP
+.SS Flag Characters
+Each of these flags will define a way that \fB_printf\fR() prints.
+.PP
+\fB+\fR      Always print '+' in front of positive integers.
+.br
+       Works with signed ints only.
+.PP
+\fB(space)\fR Adds an invisible '+' sign in front of positive numbers.
+.br
+       Works with signed ints only.
+.br
+       NOTE: if both + and (space) are used, \fB_printf\fR will ignore the
+.br	
+       (space) and print +.
+.PP
+\fB#\fR      Prefixes octals and hexes with their appropriate prefix.
+.br
+       Prefixes:
+.br
+       OCTAL: '0'
+.br
+       HEX: '0x' or '0X' respectively.
+.PP	    
 .SH AUTHORS
 Ben Keener and Travis Bearden
 
